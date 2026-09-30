@@ -65,7 +65,7 @@ An element the reader does not model becomes an `Unrecognized` entry. `read_proj
 
 `pscx.cim.emit_files` writes the nine documents from the `FlatProject`. Every drawn placement is a `cim:DetailedModelDynamics` in the EMT document, naming one shared `emt:LibraryModelType`. What a parameter is belongs on a `cim:ParameterDescriptor` of that type. What this placement sets it to is a `cim:ParameterValue`. Kinds in the rule tables are also standard equipment in EQ, TP, SC, SSH, and OP. The join from a case to a library is `(modelingTool, toolVersion, definitionName)`.
 
-[guide/](../guide/index.md) states which document carries which field.
+[Documents](../documents.md) states which document carries which field.
 
 ## The way back
 

@@ -26,6 +26,11 @@ dependencies = [
     "rdflib>=7.0",
 ]
 
+[project.urls]
+Homepage = "https://github.com/pscx-cim/pscx-cim"
+Documentation = "https://pscx-cim.github.io/pscx-cim/"
+Issues = "https://github.com/pscx-cim/pscx-cim/issues"
+
 [project.scripts]
 pscx = "pscx.cli:cli"
 
@@ -40,8 +45,7 @@ dev = [
     # sphinx with warnings as errors), so the test environment carries it
     {include-group = "docs"},
 ]
-# The HTML build shared by `docs/` (a site, not a gate) and `guide/`
-# (a gate, through the dev group's include above).
+# The guide's HTML build, a gate through the dev group's include above.
 docs = [
     "myst-parser>=4.0",
     "pydata-sphinx-theme>=0.16",

@@ -21,7 +21,7 @@ and an `emt:` class only where neither standard has one. Core CIM supplies
 the detailed-model classes, which describe a model by a type and a list of
 named parameters; EMTIOP uses the same classes. Both standard sources share
 the `cim:` namespace (`http://iec.ch/TC57/CIM100#`).
-[docs/emtiop.md](docs/emtiop.md) compares this representation with EMTIOP.
+[EMTIOP](guide/developer/emtiop.md) compares this representation with EMTIOP.
 
 The vocabulary consists of three files in `src/pscx/profiles/emt/`:
 
@@ -99,9 +99,8 @@ field by field, what the exchange must carry.
 
 - [src/pscx/profiles/emt/EMT.md](src/pscx/profiles/emt/EMT.md): the EMT
   vocabulary, class by class.
-- [guide/](guide/index.md): the guide, from installing `pscx` and
-  converting a case to the documents, the CLI, the mapping, edits and
-  known limits.
-- [docs/architecture.md](docs/architecture.md): how a case becomes the
+- [The guide](https://pscx-cim.github.io/pscx-cim/) ([source](guide/index.md)):
+  installing `pscx` and converting a case, the documents, the CLI, the
+  mapping, edits and known limits.
+- [Architecture](guide/developer/architecture.md): how a case becomes the
   documents, and how the documents become a case again.
-- [docs/README.md](docs/README.md): the developer documentation.

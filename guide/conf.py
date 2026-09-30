@@ -1,7 +1,8 @@
 """Sphinx configuration for the guide.
 
 A reader starting from these pages alone can install pscx, emit a case,
-check it and read it back. Built with warnings as errors by
+check it and read it back. The developer section follows a case through
+the code. Built with warnings as errors by
 ``tests/test_guide.py``, so a broken cross-reference fails a gate rather
 than shipping.
 
@@ -21,4 +22,4 @@ exclude_patterns = ["_build"]
 html_theme = "pydata_sphinx_theme"
 html_title = "pscx-cim guide"
 #: every chapter fits in the top bar, so none is folded into "More"
-html_theme_options = {"header_links_before_dropdown": 7}
+html_theme_options = {"header_links_before_dropdown": 8}

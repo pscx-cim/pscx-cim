@@ -33,7 +33,6 @@ tests/fixtures/**/*.pslx
 tests/fixtures/**/*.pslx.*
 
 # Rendered documentation
-docs/_build/
 guide/_build/
 
 # Python

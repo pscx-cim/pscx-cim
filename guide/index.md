@@ -17,7 +17,8 @@ The guide covers:
 - a worked example that takes the IEEE 39-bus benchmark from `.pscx`
   to documents and back;
 - what happens when you edit a document;
-- the complete list of what the exchange does not carry.
+- the complete list of what the exchange does not carry;
+- for developers, how the code is organized.
 
 When a command cannot do something, it stops and prints a report
 that says why. No command repairs, chooses or discards anything
@@ -34,4 +35,5 @@ cli
 walkthrough
 edits
 limits
+developer/index
 ```
