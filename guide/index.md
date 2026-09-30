@@ -3,6 +3,10 @@
 `pscx` converts PSCAD `.pscx` cases into IEC 61970/61968 CIM document
 sets, and converts those sets back into `.pscx` files.
 
+PSCAD is a registered trademark of Manitoba Hydro International Ltd.
+This project is not affiliated with or endorsed by Manitoba Hydro
+International.
+
 CIM+ takes its classes from three sources: the CGMES 3.0 profiles;
 core CIM, for classes that CGMES 3.0 does not profile, such as
 `ParameterDescriptor`; and the EMT extension profile, for what neither

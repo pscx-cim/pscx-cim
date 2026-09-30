@@ -3,8 +3,9 @@
 `pscx-cim` converts PSCAD 5.0 `.pscx` cases to IEC 61970/61968 CIM
 document sets and reads those sets back into a `.pscx`.
 
-PSCAD is a trademark of Manitoba Hydro International Ltd. This project is
-not affiliated with or endorsed by Manitoba Hydro International.
+PSCAD is a registered trademark of Manitoba Hydro International Ltd.
+This project is not affiliated with or endorsed by Manitoba Hydro
+International.
 
 ## CIM+
 
