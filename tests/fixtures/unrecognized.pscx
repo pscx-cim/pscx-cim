@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="unrecognized_fixture" version="5.0" schema="" Target="EMTDC" gizmo="7">
+  <paramlist name="Settings">
+    <param name="time_duration" value="0.5" />
+  </paramlist>
+  <Layers>
+    <Layer classid="Layer" name="probe" state="disabled" id="1" />
+  </Layers>
+  <definitions>
+    <Definition classid="UserCmp" name="Main" id="2" group="" flavour="vanilla">
+      <graphics viewBox="0 0 10 10">
+        <Port classid="Port" id="3" x="0" y="0" spin="42">
+          <paramlist>
+            <param name="name" value="A" />
+            <param name="mode" value="3" />
+          </paramlist>
+        </Port>
+      </graphics>
+      <schematic classid="UserCanvas" zoomlevel="6">
+        <Wire classid="WireOrthogonal" id="4" name="" x="0" y="0" orient="0"
+              disable="false" wavelength="12">
+          <vertex x="0" y="0" />
+          <vertex x="18" y="0" />
+        </Wire>
+        <User classid="UserCmp" id="5" x="0" y="0" orient="0"
+              defn="master:resistor" disable="false" sparkle="true">
+          <paramlist>
+            <param name="R" value="1.0 [ohm]" />
+          </paramlist>
+          <flourish kind="ornamental" />
+        </User>
+      </schematic>
+    </Definition>
+  </definitions>
+</project>

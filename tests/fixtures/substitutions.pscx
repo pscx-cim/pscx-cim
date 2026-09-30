@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="substitutions_fixture" version="5.0" schema="" Target="EMTDC" gizmo="7">
+  <paramlist name="Settings">
+    <param name="time_duration" value="0.5" />
+  </paramlist>
+  <GlobalSubstitutions name="Default">
+    <List classid="ListNode" name="Default">
+      <Sub classid="Sub" id="20">
+        <paramlist>
+          <param name="name" value="freq" />
+          <param name="value" value="60.0" />
+        </paramlist>
+      </Sub>
+    </List>
+  </GlobalSubstitutions>
+  <definitions>
+    <Definition classid="UserCmp" name="Main" id="2" group="" flavour="vanilla">
+      <graphics viewBox="0 0 10 10" />
+      <schematic classid="UserCanvas" zoomlevel="6">
+        <User classid="UserCmp" id="5" x="0" y="0" orient="0"
+              defn="master:resistor" disable="false">
+          <paramlist>
+            <param name="R" value="$(freq) [ohm]" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" id="6" x="0" y="72" orient="0"
+              defn="master:resistor" disable="false">
+          <paramlist>
+            <param name="R" value="$(rload) [ohm]" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" id="7" x="0" y="144" orient="0"
+              defn="master:radiolink" disable="false">
+          <paramlist>
+            <param name="caption" value="$(Name) [$(Rank)]" />
+          </paramlist>
+        </User>
+      </schematic>
+    </Definition>
+  </definitions>
+</project>

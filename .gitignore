@@ -1,0 +1,68 @@
+# PSCAD libraries and cases
+benchmarks/
+validation/
+*.pscx
+*.pslx
+*.pslx.*
+*.pswx
+*.pswb
+*.psbf
+*.out
+*.inf
+*.emt
+*.gf42
+*.gf46
+*.mcd
+*.clb
+*.psmx
+*.if18_x86/
+
+# XML data
+*.xml
+
+# HTML data
+*.html
+
+# SHACL shapes written by `pscx catalog --shapes` at the repo root
+/shapes.ttl
+
+# Test fixtures are tracked despite the blanket patterns above
+!tests/fixtures/
+!tests/fixtures/**
+tests/fixtures/**/*.pslx
+tests/fixtures/**/*.pslx.*
+
+# Rendered documentation
+docs/_build/
+guide/_build/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+htmlcov/
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Claude local settings
+.claude/settings.local.json
+CLAUDE.md
+
+notebooks/
+**/.ipynb_checkpoints/
+

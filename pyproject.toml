@@ -1,0 +1,99 @@
+[project]
+name = "pscx-cim"
+version = "0.1.0"
+description = "Convert PSCAD cases to IEC 61970/61968 CIM and back"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Grid Inno LLC" }]
+keywords = ["PSCAD", "CIM", "CGMES", "EMT", "SHACL", "power systems"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+]
+requires-python = ">=3.11"
+dependencies = [
+    "lxml>=5.0",
+    "networkx>=3.0",
+    "pycgmes>=2.0.6",
+    "pydantic>=2.0",
+    "pyshacl>=0.30",
+    "rdflib>=7.0",
+]
+
+[project.scripts]
+pscx = "pscx.cli:cli"
+
+[dependency-groups]
+dev = [
+    "hypothesis>=6.100",
+    "pytest>=8.0",
+    "pytest-xdist>=3.6",
+    "ruff>=0.8",
+    "xmldiff>=2.7",
+    # the guide's build is a gate (tests/test_guide.py runs
+    # sphinx with warnings as errors), so the test environment carries it
+    {include-group = "docs"},
+]
+# The HTML build shared by `docs/` (a site, not a gate) and `guide/`
+# (a gate, through the dev group's include above).
+docs = [
+    "myst-parser>=4.0",
+    "pydata-sphinx-theme>=0.16",
+    "sphinx>=8.0",
+    "sphinxcontrib-mermaid>=1.0",
+]
+
+[tool.uv]
+# pycgmes declares poetry as a RUNTIME dependency (a packaging mistake that
+# would drag in poetry's whole tree incl. virtualenv/dulwich). It imports and
+# constructs resources fine without it, so exclude it via an
+# impossible-marker override rather than installing with --no-deps (which
+# uv sync would not preserve).
+override-dependencies = ["poetry; python_version < '3'"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pscx"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+
+[tool.ruff.lint]
+extend-select = ["I"]
+
+[tool.ruff.lint.per-file-ignores]
+# The extractor modules below are formatting-frozen: stylistic churn in
+# validated extraction code is transcription risk with no payoff.
+# Each file ignores ONLY the codes it violated at the freeze; any new class
+# of violation still flags. New modules get no entry here — zero exceptions.
+"src/pscx/cli.py" = ["I001", "UP035"]
+"src/pscx/common.py" = ["I001"]
+"src/pscx/elaborate.py" = ["I001", "UP037", "C408", "BLE001"]
+"src/pscx/expr.py" = ["I001", "BLE001"]
+"src/pscx/geometry.py" = ["I001"]
+"src/pscx/io.py" = ["I001", "BLE001"]
+"src/pscx/lower.py" = ["I001", "FURB167", "UP037"]
+"src/pscx/model.py" = ["I001", "UP037"]
+"src/pscx/nets.py" = ["I001", "UP035", "RUF007", "BLE001"]
+"src/pscx/preproc.py" = ["I001", "PIE810", "RUF059", "PLR1730", "BLE001"]
+"src/pscx/pscad_topology.py" = ["UP035"]
+"src/pscx/units.py" = ["I001"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Tests marked slow run explicitly (pytest -m slow); the default run stays
+# fast enough for tight TDD.
+addopts = "-m 'not slow' --tb=short"
+markers = [
+    "slow: tests excluded from the default run (run them with -m slow)",
+]

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="roundtrip_fixture" version="5.0" schema="" Target="EMTDC" gizmo="7">
+  <paramlist name="Settings">
+    <param name="time_duration" value="0.5" />
+  </paramlist>
+  <bookmarks placement="left">
+    <entry name="a" href="#1">
+      <note>whatever a bookmark note is</note>
+    </entry>
+  </bookmarks>
+  <definitions>
+    <Definition classid="UserCmp" name="Main" id="2" group="" flavour="vanilla">
+      <form name="A Rectifier">
+        <category name="Configuration" visible="true">
+          <parameter name="R" type="Real" unit="ohm" desc="resistance">
+            <value>1.0</value>
+            <cond type="Enable">View == 1</cond>
+            <choice index="0" label="off" />
+          </parameter>
+        </category>
+      </form>
+      <graphics viewBox="0 0 10 10">
+        <Port classid="Port" id="3" x="0" y="0" spin="42">
+          <paramlist>
+            <param name="name" value="A" />
+            <param name="mode" value="3" />
+          </paramlist>
+        </Port>
+        <Gfx classid="Graphics.Rectangle" id="9" x="-18" y="-18">
+          <paramlist>
+            <param name="color" value="Black" />
+          </paramlist>
+        </Gfx>
+      </graphics>
+      <script>
+        <segment name="Branch" id="7">$A $B $R 0 0</segment>
+      </script>
+      <schematic classid="UserCanvas" zoomlevel="6">
+        <paramlist>
+          <param name="show_grid" value="0" />
+        </paramlist>
+        <Wire classid="WireOrthogonal" id="4" name="" x="0" y="0" orient="0"
+              disable="false" wavelength="12">
+          <vertex x="0" y="0" />
+          <vertex x="18" y="0" />
+        </Wire>
+        <User classid="UserCmp" id="10" x="36" y="0" orient="0"
+              defn="master:ground" disable="false" />
+        <User classid="UserCmp" id="5" x="0" y="0" orient="0"
+              defn="master:resistor" disable="false" sparkle="true">
+          <paramlist>
+            <param name="R" value="1.0 [ohm]" />
+          </paramlist>
+        </User>
+        <grouping id="8">
+          <member ref="5" />
+        </grouping>
+      </schematic>
+    </Definition>
+  </definitions>
+</project>

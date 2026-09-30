@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="hosting_stub_fixture" version="5.0" schema="" Target="EMTDC" gizmo="7">
+  <paramlist name="Settings">
+    <param name="time_duration" value="0.5" />
+  </paramlist>
+  <definitions>
+    <Definition classid="StationDefn" name="Station" id="1" group="">
+      <schematic classid="StationCanvas">
+        <paramlist>
+          <param name="show_grid" value="0" />
+        </paramlist>
+        <Wire classid="WireBranch" id="90" name="STUB" x="180" y="180"
+              orient="0" defn="(null):STUB" recv="-1" send="-1" back="-1"
+              disable="false">
+          <vertex x="0" y="0" />
+          <vertex x="0" y="18" />
+          <vertex x="54" y="54" />
+          <vertex x="54" y="72" />
+          <User classid="UserCmp" name="hosting_stub_fixture:Main" id="90"
+                x="0" y="0" z="-1" orient="0"
+                defn="hosting_stub_fixture:Main" link="90" disable="false">
+            <paramlist link="-1" name="" />
+          </User>
+        </Wire>
+      </schematic>
+    </Definition>
+    <Definition classid="UserCmp" name="Main" id="2" group="" flavour="vanilla">
+      <graphics viewBox="0 0 10 10" />
+      <schematic classid="UserCanvas" zoomlevel="6">
+        <paramlist>
+          <param name="show_grid" value="0" />
+        </paramlist>
+        <!-- A end: a component port meets the hosting wire's A stub, and a
+             Bus wire on the same point states the island's one BaseKV. -->
+        <User classid="UserCmp" id="10" x="54" y="90" orient="0"
+              defn="master:resistor" disable="false">
+          <paramlist>
+            <param name="R" value="1.0 [ohm]" />
+          </paramlist>
+        </User>
+        <Wire classid="Bus" name="" id="11" x="90" y="90" orient="0"
+              disable="false">
+          <paramlist>
+            <param name="Name" value="BusA" />
+            <param name="BaseKV" value="230.0" />
+          </paramlist>
+          <vertex x="0" y="0" />
+          <vertex x="0" y="36" />
+        </Wire>
+        <!-- Line 1: outer A at (90,90), outer B at (198,90). -->
+        <Wire classid="TLine" id="100" name="hosting_stub_fixture:L1"
+              x="90" y="90" orient="0" defn="hosting_stub_fixture:L1"
+              recv="-1" send="-1" back="-1" disable="false">
+          <User classid="UserCmp" name="hosting_stub_fixture:L1" id="100"
+                x="0" y="0" z="-1" orient="0"
+                defn="hosting_stub_fixture:L1" link="100" disable="false">
+            <paramlist link="-1" name="">
+              <param name="Name" value="L1" />
+              <param name="Dim" value="1" />
+            </paramlist>
+          </User>
+          <vertex x="0" y="0" />
+          <vertex x="0" y="18" />
+          <vertex x="108" y="-18" />
+          <vertex x="108" y="0" />
+        </Wire>
+        <!-- The plain wire that meets L1's B end: the junction it forms
+             with L2's A end has wire and line-terminal members only. -->
+        <Wire classid="WireOrthogonal" id="20" name="" x="198" y="90"
+              orient="0" disable="false">
+          <vertex x="0" y="0" />
+          <vertex x="36" y="0" />
+        </Wire>
+        <!-- Line 2: outer A at (234,90), outer B at (342,90). -->
+        <Wire classid="TLine" id="200" name="hosting_stub_fixture:L2"
+              x="234" y="90" orient="0" defn="hosting_stub_fixture:L2"
+              recv="-1" send="-1" back="-1" disable="false">
+          <User classid="UserCmp" name="hosting_stub_fixture:L2" id="200"
+                x="0" y="0" z="-1" orient="0"
+                defn="hosting_stub_fixture:L2" link="200" disable="false">
+            <paramlist link="-1" name="">
+              <param name="Name" value="L2" />
+              <param name="Dim" value="1" />
+            </paramlist>
+          </User>
+          <vertex x="0" y="0" />
+          <vertex x="0" y="18" />
+          <vertex x="108" y="-18" />
+          <vertex x="108" y="0" />
+        </Wire>
+        <Wire classid="WireOrthogonal" id="21" name="" x="342" y="90"
+              orient="0" disable="false">
+          <vertex x="0" y="0" />
+          <vertex x="36" y="0" />
+        </Wire>
+        <User classid="UserCmp" id="12" x="378" y="90" orient="0"
+              defn="master:resistor" disable="false">
+          <paramlist>
+            <param name="R" value="1.0 [ohm]" />
+          </paramlist>
+        </User>
+        <!-- Line 3: a collapsed body (the two inner vertices coincide).
+             The synthetic terminal keys must keep its ends apart. -->
+        <Wire classid="TLine" id="300" name="hosting_stub_fixture:L3"
+              x="90" y="234" orient="0" defn="hosting_stub_fixture:L3"
+              recv="-1" send="-1" back="-1" disable="false">
+          <User classid="UserCmp" name="hosting_stub_fixture:L3" id="300"
+                x="0" y="0" z="-1" orient="0"
+                defn="hosting_stub_fixture:L3" link="300" disable="false">
+            <paramlist link="-1" name="">
+              <param name="Name" value="L3" />
+              <param name="Dim" value="1" />
+            </paramlist>
+          </User>
+          <vertex x="0" y="0" />
+          <vertex x="54" y="0" />
+          <vertex x="54" y="0" />
+          <vertex x="108" y="0" />
+        </Wire>
+      </schematic>
+    </Definition>
+  </definitions>
+</project>

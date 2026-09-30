@@ -1,0 +1,3368 @@
+# The constraints for the EMT extension profile.
+#
+# GENERATED from src/pscx/profiles/emt/EMT-AP-Voc-RDFS.rdf by tools/gen_emt_shacl.py;
+# edit the vocabulary (or that script's VALUE_CONSTRAINTS table) and
+# regenerate. The vocabulary and these constraints are published together.
+@prefix cim:     <http://iec.ch/TC57/CIM100#> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix emt:     <https://w3id.org/pscx-cim/ns/CIM/EMT#> .
+@prefix emtc:    <https://w3id.org/pscx-cim/ns/CIM/EMT/Constraints#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+emtc:Ontology  rdf:type       owl:Ontology ;
+        dcterms:conformsTo    "urn:iso:std:iec:61970-600-2:ed-1" ;
+        dcterms:creator       "pscx-cim"@en ;
+        dcterms:description   "The constraints for the EMT extension profile."@en ;
+        dcterms:identifier    "5a3d1c7e-9b02-5f44-a7d1-6c2e8b0f3d95" ;
+        dcterms:language      "en-GB" ;
+        dcterms:publisher     "pscx-cim"@en ;
+        dcterms:title         "EMT Extension Constraints"@en ;
+        owl:versionIRI        <https://w3id.org/pscx-cim/ns/CIM/EMT/Constraints/1.0> ;
+        owl:versionInfo       "1.0.0"@en ;
+        dcat:keyword          "EMT" ;
+        dcat:theme            "constraints"@en .
+
+emtc:ConnectivityNode.phaseCount-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ConnectivityNode.phaseCount-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:ConnectivityNode.phaseCount ;
+        sh:severity     sh:Violation .
+
+emtc:ConnectivityNode.phaseCount-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:integer ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ConnectivityNode.phaseCount-datatype" ;
+        sh:order        0 ;
+        sh:path         emt:ConnectivityNode.phaseCount ;
+        sh:severity     sh:Violation .
+
+emtc:ConnectivityNode.phaseCount-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:ConnectivityNode.phaseCount-cardinality ,
+                        emtc:ConnectivityNode.phaseCount-datatype ,
+                        emtc:ConnectivityNode.phaseCount-valueRange ;
+        sh:targetSubjectsOf  emt:ConnectivityNode.phaseCount .
+
+emtc:ConnectivityNode.phaseCount-valueRange
+        rdf:type        sh:PropertyShape ;
+        sh:minInclusive 1 ;
+        sh:description  "This constraint validates the value range of the property." ;
+        sh:message      "The value violates the declared valueRange." ;
+        sh:name         "ConnectivityNode.phaseCount-valueRange" ;
+        sh:order        0 ;
+        sh:path         emt:ConnectivityNode.phaseCount ;
+        sh:severity     sh:Violation .
+
+emtc:DetailedModelDescriptor.DetailedModelTypeDynamics-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "DetailedModelDescriptor.DetailedModelTypeDynamics-cardinality" ;
+        sh:order        0 ;
+        sh:path         cim:DetailedModelDescriptor.DetailedModelTypeDynamics ;
+        sh:severity     sh:Violation .
+
+emtc:DetailedModelDescriptor.DetailedModelTypeDynamics-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "The value type shall be an IRI referencing an instance of the class: cim:DetailedModelTypeDynamics" ;
+        sh:name         "DetailedModelDescriptor.DetailedModelTypeDynamics-valueType" ;
+        sh:order        0 ;
+        sh:path         cim:DetailedModelDescriptor.DetailedModelTypeDynamics ;
+        sh:severity     sh:Violation .
+
+emtc:DetailedModelDynamics
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:DetailedModelDynamics.DetailedModelTypeDynamics-cardinality ,
+                        emtc:DetailedModelDynamics.DetailedModelTypeDynamics-valueType ,
+                        emtc:DetailedModelDynamics.Equipment-cardinality ,
+                        emtc:DetailedModelDynamics.Equipment-valueType ,
+                        emtc:DynamicsFunctionBlock.enabled-cardinality ,
+                        emtc:DynamicsFunctionBlock.enabled-datatype ,
+                        emtc:IdentifiedObject.description-cardinality ,
+                        emtc:IdentifiedObject.description-datatype ,
+                        emtc:IdentifiedObject.mRID-cardinality ,
+                        emtc:IdentifiedObject.mRID-datatype ,
+                        emtc:IdentifiedObject.name-cardinality ,
+                        emtc:IdentifiedObject.name-datatype ;
+        sh:targetClass  cim:DetailedModelDynamics .
+
+emtc:DetailedModelDynamics.ContainingDefinition-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "DetailedModelDynamics.ContainingDefinition-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:DetailedModelDynamics.ContainingDefinition ;
+        sh:severity     sh:Violation .
+
+emtc:DetailedModelDynamics.ContainingDefinition-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:DetailedModelDynamics.ContainingDefinition-cardinality ,
+                        emtc:DetailedModelDynamics.ContainingDefinition-valueType ;
+        sh:targetSubjectsOf  emt:DetailedModelDynamics.ContainingDefinition .
+
+emtc:DetailedModelDynamics.ContainingDefinition-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:in           ( emt:ModelDefinition ) ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: emt:ModelDefinition" ;
+        sh:name         "DetailedModelDynamics.ContainingDefinition-valueType" ;
+        sh:order        0 ;
+        sh:path         ( emt:DetailedModelDynamics.ContainingDefinition rdf:type ) ;
+        sh:severity     sh:Violation .
+
+emtc:DetailedModelDynamics.DetailedModelTypeDynamics-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "DetailedModelDynamics.DetailedModelTypeDynamics-cardinality" ;
+        sh:order        1 ;
+        sh:path         cim:DetailedModelDynamics.DetailedModelTypeDynamics ;
+        sh:severity     sh:Violation .
+
+emtc:DetailedModelDynamics.DetailedModelTypeDynamics-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "The value type shall be an IRI referencing an instance of the class: cim:DetailedModelTypeDynamics" ;
+        sh:name         "DetailedModelDynamics.DetailedModelTypeDynamics-valueType" ;
+        sh:order        1 ;
+        sh:path         cim:DetailedModelDynamics.DetailedModelTypeDynamics ;
+        sh:severity     sh:Violation .
+
+emtc:DetailedModelDynamics.Equipment-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "DetailedModelDynamics.Equipment-cardinality" ;
+        sh:order        2 ;
+        sh:path         cim:DetailedModelDynamics.Equipment ;
+        sh:severity     sh:Violation .
+
+emtc:DetailedModelDynamics.Equipment-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "The value type shall be an IRI referencing an instance of the class: cim:Equipment" ;
+        sh:name         "DetailedModelDynamics.Equipment-valueType" ;
+        sh:order        2 ;
+        sh:path         cim:DetailedModelDynamics.Equipment ;
+        sh:severity     sh:Violation .
+
+emtc:DetailedModelDynamics.HostingWire-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "DetailedModelDynamics.HostingWire-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:DetailedModelDynamics.HostingWire ;
+        sh:severity     sh:Violation .
+
+emtc:DetailedModelDynamics.HostingWire-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:DetailedModelDynamics.HostingWire-cardinality ,
+                        emtc:DetailedModelDynamics.HostingWire-valueType ;
+        sh:targetSubjectsOf  emt:DetailedModelDynamics.HostingWire .
+
+emtc:DetailedModelDynamics.HostingWire-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "The value type shall be an IRI referencing an instance of the class: cim:DetailedModelDynamics" ;
+        sh:name         "DetailedModelDynamics.HostingWire-valueType" ;
+        sh:order        0 ;
+        sh:path         emt:DetailedModelDynamics.HostingWire ;
+        sh:severity     sh:Violation .
+
+emtc:DetailedModelDynamics.IdentifiedObject-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:DetailedModelDynamics.IdentifiedObject-valueType ;
+        sh:targetSubjectsOf  emt:DetailedModelDynamics.IdentifiedObject .
+
+emtc:DetailedModelDynamics.IdentifiedObject-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "The value type shall be an IRI referencing an instance of the class: cim:IdentifiedObject" ;
+        sh:name         "DetailedModelDynamics.IdentifiedObject-valueType" ;
+        sh:order        0 ;
+        sh:path         emt:DetailedModelDynamics.IdentifiedObject ;
+        sh:severity     sh:Violation .
+
+emtc:DetailedModelDynamics.RightOfWay-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "DetailedModelDynamics.RightOfWay-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:DetailedModelDynamics.RightOfWay ;
+        sh:severity     sh:Violation .
+
+emtc:DetailedModelDynamics.RightOfWay-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:DetailedModelDynamics.RightOfWay-cardinality ,
+                        emtc:DetailedModelDynamics.RightOfWay-valueType ;
+        sh:targetSubjectsOf  emt:DetailedModelDynamics.RightOfWay .
+
+emtc:DetailedModelDynamics.RightOfWay-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:in           ( emt:RightOfWay ) ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: emt:RightOfWay" ;
+        sh:name         "DetailedModelDynamics.RightOfWay-valueType" ;
+        sh:order        0 ;
+        sh:path         ( emt:DetailedModelDynamics.RightOfWay rdf:type ) ;
+        sh:severity     sh:Violation .
+
+emtc:DetailedModelDynamics.definitionReference-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "DetailedModelDynamics.definitionReference-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:DetailedModelDynamics.definitionReference ;
+        sh:severity     sh:Violation .
+
+emtc:DetailedModelDynamics.definitionReference-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "DetailedModelDynamics.definitionReference-datatype" ;
+        sh:order        0 ;
+        sh:path         emt:DetailedModelDynamics.definitionReference ;
+        sh:severity     sh:Violation .
+
+emtc:DetailedModelDynamics.definitionReference-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:DetailedModelDynamics.definitionReference-cardinality ,
+                        emtc:DetailedModelDynamics.definitionReference-datatype ;
+        sh:targetSubjectsOf  emt:DetailedModelDynamics.definitionReference .
+
+emtc:DetailedModelDynamics.mirrored-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "DetailedModelDynamics.mirrored-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:DetailedModelDynamics.mirrored ;
+        sh:severity     sh:Violation .
+
+emtc:DetailedModelDynamics.mirrored-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:boolean ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "DetailedModelDynamics.mirrored-datatype" ;
+        sh:order        0 ;
+        sh:path         emt:DetailedModelDynamics.mirrored ;
+        sh:severity     sh:Violation .
+
+emtc:DetailedModelDynamics.mirrored-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:DetailedModelDynamics.mirrored-cardinality ,
+                        emtc:DetailedModelDynamics.mirrored-datatype ;
+        sh:targetSubjectsOf  emt:DetailedModelDynamics.mirrored .
+
+emtc:DynamicsFunctionBlock.enabled-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "DynamicsFunctionBlock.enabled-cardinality" ;
+        sh:order        0 ;
+        sh:path         cim:DynamicsFunctionBlock.enabled ;
+        sh:severity     sh:Violation .
+
+emtc:DynamicsFunctionBlock.enabled-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:boolean ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "DynamicsFunctionBlock.enabled-datatype" ;
+        sh:order        0 ;
+        sh:path         cim:DynamicsFunctionBlock.enabled ;
+        sh:severity     sh:Violation .
+
+emtc:IdentifiedObject.description-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "IdentifiedObject.description-cardinality" ;
+        sh:order        2 ;
+        sh:path         cim:IdentifiedObject.description ;
+        sh:severity     sh:Violation .
+
+emtc:IdentifiedObject.description-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "IdentifiedObject.description-datatype" ;
+        sh:order        2 ;
+        sh:path         cim:IdentifiedObject.description ;
+        sh:severity     sh:Violation .
+
+emtc:IdentifiedObject.mRID-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "IdentifiedObject.mRID-cardinality" ;
+        sh:order        0 ;
+        sh:path         cim:IdentifiedObject.mRID ;
+        sh:severity     sh:Violation .
+
+emtc:IdentifiedObject.mRID-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "IdentifiedObject.mRID-datatype" ;
+        sh:order        0 ;
+        sh:path         cim:IdentifiedObject.mRID ;
+        sh:severity     sh:Violation .
+
+emtc:IdentifiedObject.name-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "IdentifiedObject.name-cardinality" ;
+        sh:order        1 ;
+        sh:path         cim:IdentifiedObject.name ;
+        sh:severity     sh:Violation .
+
+emtc:IdentifiedObject.name-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "IdentifiedObject.name-datatype" ;
+        sh:order        1 ;
+        sh:path         cim:IdentifiedObject.name ;
+        sh:severity     sh:Violation .
+
+emtc:IdentifiedObject.sourceClass-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "IdentifiedObject.sourceClass-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:IdentifiedObject.sourceClass ;
+        sh:severity     sh:Violation .
+
+emtc:IdentifiedObject.sourceClass-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "IdentifiedObject.sourceClass-datatype" ;
+        sh:order        0 ;
+        sh:path         emt:IdentifiedObject.sourceClass ;
+        sh:severity     sh:Violation .
+
+emtc:IdentifiedObject.sourceClass-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:IdentifiedObject.sourceClass-cardinality ,
+                        emtc:IdentifiedObject.sourceClass-datatype ;
+        sh:targetSubjectsOf  emt:IdentifiedObject.sourceClass .
+
+emtc:LibraryModelType
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:IdentifiedObject.description-cardinality ,
+                        emtc:IdentifiedObject.description-datatype ,
+                        emtc:IdentifiedObject.mRID-cardinality ,
+                        emtc:IdentifiedObject.mRID-datatype ,
+                        emtc:IdentifiedObject.name-cardinality ,
+                        emtc:IdentifiedObject.name-datatype ,
+                        emtc:LibraryModelType.definitionName-cardinality ,
+                        emtc:LibraryModelType.definitionName-datatype ,
+                        emtc:LibraryModelType.definitionName-length ,
+                        emtc:LibraryModelType.modelingTool-cardinality ,
+                        emtc:LibraryModelType.modelingTool-datatype ,
+                        emtc:LibraryModelType.modelingTool-length ,
+                        emtc:LibraryModelType.toolVersion-cardinality ,
+                        emtc:LibraryModelType.toolVersion-datatype ;
+        sh:targetClass  emt:LibraryModelType .
+
+emtc:LibraryModelType.definitionName-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "LibraryModelType.definitionName-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:LibraryModelType.definitionName ;
+        sh:severity     sh:Violation .
+
+emtc:LibraryModelType.definitionName-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "LibraryModelType.definitionName-datatype" ;
+        sh:order        0 ;
+        sh:path         emt:LibraryModelType.definitionName ;
+        sh:severity     sh:Violation .
+
+emtc:LibraryModelType.definitionName-length
+        rdf:type        sh:PropertyShape ;
+        sh:minLength    1 ;
+        sh:description  "This constraint validates the length of the property value." ;
+        sh:message      "The value violates the declared length." ;
+        sh:name         "LibraryModelType.definitionName-length" ;
+        sh:order        0 ;
+        sh:path         emt:LibraryModelType.definitionName ;
+        sh:severity     sh:Violation .
+
+emtc:LibraryModelType.modelingTool-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "LibraryModelType.modelingTool-cardinality" ;
+        sh:order        1 ;
+        sh:path         emt:LibraryModelType.modelingTool ;
+        sh:severity     sh:Violation .
+
+emtc:LibraryModelType.modelingTool-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "LibraryModelType.modelingTool-datatype" ;
+        sh:order        1 ;
+        sh:path         emt:LibraryModelType.modelingTool ;
+        sh:severity     sh:Violation .
+
+emtc:LibraryModelType.modelingTool-length
+        rdf:type        sh:PropertyShape ;
+        sh:minLength    1 ;
+        sh:description  "This constraint validates the length of the property value." ;
+        sh:message      "The value violates the declared length." ;
+        sh:name         "LibraryModelType.modelingTool-length" ;
+        sh:order        1 ;
+        sh:path         emt:LibraryModelType.modelingTool ;
+        sh:severity     sh:Violation .
+
+emtc:LibraryModelType.toolVersion-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "LibraryModelType.toolVersion-cardinality" ;
+        sh:order        2 ;
+        sh:path         emt:LibraryModelType.toolVersion ;
+        sh:severity     sh:Violation .
+
+emtc:LibraryModelType.toolVersion-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "LibraryModelType.toolVersion-datatype" ;
+        sh:order        2 ;
+        sh:path         emt:LibraryModelType.toolVersion ;
+        sh:severity     sh:Violation .
+
+emtc:Line.RightOfWay-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "Line.RightOfWay-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:Line.RightOfWay ;
+        sh:severity     sh:Violation .
+
+emtc:Line.RightOfWay-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:Line.RightOfWay-cardinality ,
+                        emtc:Line.RightOfWay-valueType ;
+        sh:targetSubjectsOf  emt:Line.RightOfWay .
+
+emtc:Line.RightOfWay-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:in           ( emt:RightOfWay ) ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: emt:RightOfWay" ;
+        sh:name         "Line.RightOfWay-valueType" ;
+        sh:order        0 ;
+        sh:path         ( emt:Line.RightOfWay rdf:type ) ;
+        sh:severity     sh:Violation .
+
+emtc:Line.conductorCount-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "Line.conductorCount-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:Line.conductorCount ;
+        sh:severity     sh:Violation .
+
+emtc:Line.conductorCount-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:integer ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "Line.conductorCount-datatype" ;
+        sh:order        0 ;
+        sh:path         emt:Line.conductorCount ;
+        sh:severity     sh:Violation .
+
+emtc:Line.conductorCount-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:Line.conductorCount-cardinality ,
+                        emtc:Line.conductorCount-datatype ,
+                        emtc:Line.conductorCount-valueRange ;
+        sh:targetSubjectsOf  emt:Line.conductorCount .
+
+emtc:Line.conductorCount-valueRange
+        rdf:type        sh:PropertyShape ;
+        sh:minInclusive 1 ;
+        sh:description  "This constraint validates the value range of the property." ;
+        sh:message      "The value violates the declared valueRange." ;
+        sh:name         "Line.conductorCount-valueRange" ;
+        sh:order        0 ;
+        sh:path         emt:Line.conductorCount ;
+        sh:severity     sh:Violation .
+
+emtc:Line.frequency-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "Line.frequency-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:Line.frequency ;
+        sh:severity     sh:Violation .
+
+emtc:Line.frequency-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "Line.frequency-datatype" ;
+        sh:order        0 ;
+        sh:path         emt:Line.frequency ;
+        sh:severity     sh:Violation .
+
+emtc:Line.frequency-length
+        rdf:type        sh:PropertyShape ;
+        sh:minLength    1 ;
+        sh:description  "This constraint validates the length of the property value." ;
+        sh:message      "The value violates the declared length." ;
+        sh:name         "Line.frequency-length" ;
+        sh:order        0 ;
+        sh:path         emt:Line.frequency ;
+        sh:severity     sh:Violation .
+
+emtc:Line.frequency-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:Line.frequency-cardinality ,
+                        emtc:Line.frequency-datatype ,
+                        emtc:Line.frequency-length ;
+        sh:targetSubjectsOf  emt:Line.frequency .
+
+emtc:Line.length-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "Line.length-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:Line.length ;
+        sh:severity     sh:Violation .
+
+emtc:Line.length-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "Line.length-datatype" ;
+        sh:order        0 ;
+        sh:path         emt:Line.length ;
+        sh:severity     sh:Violation .
+
+emtc:Line.length-length
+        rdf:type        sh:PropertyShape ;
+        sh:minLength    1 ;
+        sh:description  "This constraint validates the length of the property value." ;
+        sh:message      "The value violates the declared length." ;
+        sh:name         "Line.length-length" ;
+        sh:order        0 ;
+        sh:path         emt:Line.length ;
+        sh:severity     sh:Violation .
+
+emtc:Line.length-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:Line.length-cardinality ,
+                        emtc:Line.length-datatype ,
+                        emtc:Line.length-length ;
+        sh:targetSubjectsOf  emt:Line.length .
+
+emtc:MatrixRow
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:MatrixRow.ParameterValue-cardinality ,
+                        emtc:MatrixRow.ParameterValue-valueType ,
+                        emtc:MatrixRow.sequenceNumber-cardinality ,
+                        emtc:MatrixRow.sequenceNumber-datatype ,
+                        emtc:MatrixRow.value-cardinality ,
+                        emtc:MatrixRow.value-datatype ;
+        sh:targetClass  emt:MatrixRow .
+
+emtc:MatrixRow.ParameterValue-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "MatrixRow.ParameterValue-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:MatrixRow.ParameterValue ;
+        sh:severity     sh:Violation .
+
+emtc:MatrixRow.ParameterValue-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "The value type shall be an IRI referencing an instance of the class: cim:ParameterValue" ;
+        sh:name         "MatrixRow.ParameterValue-valueType" ;
+        sh:order        0 ;
+        sh:path         emt:MatrixRow.ParameterValue ;
+        sh:severity     sh:Violation .
+
+emtc:MatrixRow.sequenceNumber-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "MatrixRow.sequenceNumber-cardinality" ;
+        sh:order        1 ;
+        sh:path         emt:MatrixRow.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:MatrixRow.sequenceNumber-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:integer ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "MatrixRow.sequenceNumber-datatype" ;
+        sh:order        1 ;
+        sh:path         emt:MatrixRow.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:MatrixRow.value-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "MatrixRow.value-cardinality" ;
+        sh:order        2 ;
+        sh:path         emt:MatrixRow.value ;
+        sh:severity     sh:Violation .
+
+emtc:MatrixRow.value-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "MatrixRow.value-datatype" ;
+        sh:order        2 ;
+        sh:path         emt:MatrixRow.value ;
+        sh:severity     sh:Violation .
+
+emtc:ModelDefinition
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:IdentifiedObject.description-cardinality ,
+                        emtc:IdentifiedObject.description-datatype ,
+                        emtc:IdentifiedObject.mRID-cardinality ,
+                        emtc:IdentifiedObject.mRID-datatype ,
+                        emtc:IdentifiedObject.name-cardinality ,
+                        emtc:IdentifiedObject.name-datatype ,
+                        emtc:ModelDefinition.ModelProject-cardinality ,
+                        emtc:ModelDefinition.ModelProject-valueType ,
+                        emtc:ModelDefinition.definitionName-cardinality ,
+                        emtc:ModelDefinition.definitionName-datatype ,
+                        emtc:ModelDefinition.definitionName-length ,
+                        emtc:ModelDefinition.group-cardinality ,
+                        emtc:ModelDefinition.group-datatype ;
+        sh:targetClass  emt:ModelDefinition .
+
+emtc:ModelDefinition.ModelProject-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ModelDefinition.ModelProject-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:ModelDefinition.ModelProject ;
+        sh:severity     sh:Violation .
+
+emtc:ModelDefinition.ModelProject-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:in           ( emt:ModelProject ) ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: emt:ModelProject" ;
+        sh:name         "ModelDefinition.ModelProject-valueType" ;
+        sh:order        0 ;
+        sh:path         ( emt:ModelDefinition.ModelProject rdf:type ) ;
+        sh:severity     sh:Violation .
+
+emtc:ModelDefinition.definitionName-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ModelDefinition.definitionName-cardinality" ;
+        sh:order        1 ;
+        sh:path         emt:ModelDefinition.definitionName ;
+        sh:severity     sh:Violation .
+
+emtc:ModelDefinition.definitionName-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ModelDefinition.definitionName-datatype" ;
+        sh:order        1 ;
+        sh:path         emt:ModelDefinition.definitionName ;
+        sh:severity     sh:Violation .
+
+emtc:ModelDefinition.definitionName-length
+        rdf:type        sh:PropertyShape ;
+        sh:minLength    1 ;
+        sh:description  "This constraint validates the length of the property value." ;
+        sh:message      "The value violates the declared length." ;
+        sh:name         "ModelDefinition.definitionName-length" ;
+        sh:order        1 ;
+        sh:path         emt:ModelDefinition.definitionName ;
+        sh:severity     sh:Violation .
+
+emtc:ModelDefinition.group-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "ModelDefinition.group-cardinality" ;
+        sh:order        2 ;
+        sh:path         emt:ModelDefinition.group ;
+        sh:severity     sh:Violation .
+
+emtc:ModelDefinition.group-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ModelDefinition.group-datatype" ;
+        sh:order        2 ;
+        sh:path         emt:ModelDefinition.group ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:IdentifiedObject.description-cardinality ,
+                        emtc:IdentifiedObject.description-datatype ,
+                        emtc:IdentifiedObject.mRID-cardinality ,
+                        emtc:IdentifiedObject.mRID-datatype ,
+                        emtc:IdentifiedObject.name-cardinality ,
+                        emtc:IdentifiedObject.name-datatype ,
+                        emtc:ModelPort.DetailedModelTypeDynamics-cardinality ,
+                        emtc:ModelPort.DetailedModelTypeDynamics-valueType ,
+                        emtc:ModelPort.condition-cardinality ,
+                        emtc:ModelPort.condition-datatype ,
+                        emtc:ModelPort.dataType-cardinality ,
+                        emtc:ModelPort.dataType-datatype ,
+                        emtc:ModelPort.dimension-cardinality ,
+                        emtc:ModelPort.dimension-datatype ,
+                        emtc:ModelPort.electricalType-cardinality ,
+                        emtc:ModelPort.electricalType-datatype ,
+                        emtc:ModelPort.internal-cardinality ,
+                        emtc:ModelPort.internal-datatype ,
+                        emtc:ModelPort.mode-cardinality ,
+                        emtc:ModelPort.mode-datatype ,
+                        emtc:ModelPort.portName-cardinality ,
+                        emtc:ModelPort.portName-datatype ,
+                        emtc:ModelPort.portName-length ,
+                        emtc:ModelPort.sequenceNumber-cardinality ,
+                        emtc:ModelPort.sequenceNumber-datatype ,
+                        emtc:ModelPort.sequenceNumber-valueRange ,
+                        emtc:ModelPort.sourceIdentifier-cardinality ,
+                        emtc:ModelPort.sourceIdentifier-datatype ;
+        sh:targetClass  emt:ModelPort .
+
+emtc:ModelPort.DetailedModelTypeDynamics-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ModelPort.DetailedModelTypeDynamics-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:ModelPort.DetailedModelTypeDynamics ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.DetailedModelTypeDynamics-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "The value type shall be an IRI referencing an instance of the class: cim:DetailedModelTypeDynamics" ;
+        sh:name         "ModelPort.DetailedModelTypeDynamics-valueType" ;
+        sh:order        0 ;
+        sh:path         emt:ModelPort.DetailedModelTypeDynamics ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.condition-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ModelPort.condition-cardinality" ;
+        sh:order        1 ;
+        sh:path         emt:ModelPort.condition ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.condition-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ModelPort.condition-datatype" ;
+        sh:order        1 ;
+        sh:path         emt:ModelPort.condition ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.dataType-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ModelPort.dataType-cardinality" ;
+        sh:order        2 ;
+        sh:path         emt:ModelPort.dataType ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.dataType-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ModelPort.dataType-datatype" ;
+        sh:order        2 ;
+        sh:path         emt:ModelPort.dataType ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.dimension-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ModelPort.dimension-cardinality" ;
+        sh:order        3 ;
+        sh:path         emt:ModelPort.dimension ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.dimension-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ModelPort.dimension-datatype" ;
+        sh:order        3 ;
+        sh:path         emt:ModelPort.dimension ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.electricalType-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ModelPort.electricalType-cardinality" ;
+        sh:order        4 ;
+        sh:path         emt:ModelPort.electricalType ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.electricalType-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ModelPort.electricalType-datatype" ;
+        sh:order        4 ;
+        sh:path         emt:ModelPort.electricalType ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.internal-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ModelPort.internal-cardinality" ;
+        sh:order        5 ;
+        sh:path         emt:ModelPort.internal ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.internal-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:boolean ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ModelPort.internal-datatype" ;
+        sh:order        5 ;
+        sh:path         emt:ModelPort.internal ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.mode-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ModelPort.mode-cardinality" ;
+        sh:order        6 ;
+        sh:path         emt:ModelPort.mode ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.mode-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ModelPort.mode-datatype" ;
+        sh:order        6 ;
+        sh:path         emt:ModelPort.mode ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.portName-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ModelPort.portName-cardinality" ;
+        sh:order        7 ;
+        sh:path         emt:ModelPort.portName ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.portName-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ModelPort.portName-datatype" ;
+        sh:order        7 ;
+        sh:path         emt:ModelPort.portName ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.portName-length
+        rdf:type        sh:PropertyShape ;
+        sh:minLength    1 ;
+        sh:description  "This constraint validates the length of the property value." ;
+        sh:message      "The value violates the declared length." ;
+        sh:name         "ModelPort.portName-length" ;
+        sh:order        7 ;
+        sh:path         emt:ModelPort.portName ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.sequenceNumber-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ModelPort.sequenceNumber-cardinality" ;
+        sh:order        8 ;
+        sh:path         emt:ModelPort.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.sequenceNumber-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:integer ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ModelPort.sequenceNumber-datatype" ;
+        sh:order        8 ;
+        sh:path         emt:ModelPort.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.sequenceNumber-valueRange
+        rdf:type        sh:PropertyShape ;
+        sh:minInclusive 1 ;
+        sh:description  "This constraint validates the value range of the property." ;
+        sh:message      "The value violates the declared valueRange." ;
+        sh:name         "ModelPort.sequenceNumber-valueRange" ;
+        sh:order        8 ;
+        sh:path         emt:ModelPort.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.sourceIdentifier-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "ModelPort.sourceIdentifier-cardinality" ;
+        sh:order        9 ;
+        sh:path         emt:ModelPort.sourceIdentifier ;
+        sh:severity     sh:Violation .
+
+emtc:ModelPort.sourceIdentifier-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ModelPort.sourceIdentifier-datatype" ;
+        sh:order        9 ;
+        sh:path         emt:ModelPort.sourceIdentifier ;
+        sh:severity     sh:Violation .
+
+emtc:ModelProject
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:IdentifiedObject.description-cardinality ,
+                        emtc:IdentifiedObject.description-datatype ,
+                        emtc:IdentifiedObject.mRID-cardinality ,
+                        emtc:IdentifiedObject.mRID-datatype ,
+                        emtc:IdentifiedObject.name-cardinality ,
+                        emtc:IdentifiedObject.name-datatype ,
+                        emtc:ModelProject.sourceFormatVersion-cardinality ,
+                        emtc:ModelProject.sourceFormatVersion-datatype ,
+                        emtc:ModelProject.targetPlatform-cardinality ,
+                        emtc:ModelProject.targetPlatform-datatype ;
+        sh:targetClass  emt:ModelProject .
+
+emtc:ModelProject.sourceFormatVersion-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "ModelProject.sourceFormatVersion-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:ModelProject.sourceFormatVersion ;
+        sh:severity     sh:Violation .
+
+emtc:ModelProject.sourceFormatVersion-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ModelProject.sourceFormatVersion-datatype" ;
+        sh:order        0 ;
+        sh:path         emt:ModelProject.sourceFormatVersion ;
+        sh:severity     sh:Violation .
+
+emtc:ModelProject.targetPlatform-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "ModelProject.targetPlatform-cardinality" ;
+        sh:order        1 ;
+        sh:path         emt:ModelProject.targetPlatform ;
+        sh:severity     sh:Violation .
+
+emtc:ModelProject.targetPlatform-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ModelProject.targetPlatform-datatype" ;
+        sh:order        1 ;
+        sh:path         emt:ModelProject.targetPlatform ;
+        sh:severity     sh:Violation .
+
+emtc:ModelScript
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:IdentifiedObject.description-cardinality ,
+                        emtc:IdentifiedObject.description-datatype ,
+                        emtc:IdentifiedObject.mRID-cardinality ,
+                        emtc:IdentifiedObject.mRID-datatype ,
+                        emtc:IdentifiedObject.name-cardinality ,
+                        emtc:IdentifiedObject.name-datatype ,
+                        emtc:ModelScript.ModelDefinition-cardinality ,
+                        emtc:ModelScript.ModelDefinition-valueType ,
+                        emtc:ModelScript.segmentName-cardinality ,
+                        emtc:ModelScript.segmentName-datatype ,
+                        emtc:ModelScript.segmentName-length ,
+                        emtc:ModelScript.sequenceNumber-cardinality ,
+                        emtc:ModelScript.sequenceNumber-datatype ,
+                        emtc:ModelScript.sequenceNumber-valueRange ,
+                        emtc:ModelScript.source-cardinality ,
+                        emtc:ModelScript.source-datatype ;
+        sh:targetClass  emt:ModelScript .
+
+emtc:ModelScript.ModelDefinition-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ModelScript.ModelDefinition-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:ModelScript.ModelDefinition ;
+        sh:severity     sh:Violation .
+
+emtc:ModelScript.ModelDefinition-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:in           ( emt:ModelDefinition ) ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: emt:ModelDefinition" ;
+        sh:name         "ModelScript.ModelDefinition-valueType" ;
+        sh:order        0 ;
+        sh:path         ( emt:ModelScript.ModelDefinition rdf:type ) ;
+        sh:severity     sh:Violation .
+
+emtc:ModelScript.segmentName-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ModelScript.segmentName-cardinality" ;
+        sh:order        1 ;
+        sh:path         emt:ModelScript.segmentName ;
+        sh:severity     sh:Violation .
+
+emtc:ModelScript.segmentName-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ModelScript.segmentName-datatype" ;
+        sh:order        1 ;
+        sh:path         emt:ModelScript.segmentName ;
+        sh:severity     sh:Violation .
+
+emtc:ModelScript.segmentName-length
+        rdf:type        sh:PropertyShape ;
+        sh:minLength    1 ;
+        sh:description  "This constraint validates the length of the property value." ;
+        sh:message      "The value violates the declared length." ;
+        sh:name         "ModelScript.segmentName-length" ;
+        sh:order        1 ;
+        sh:path         emt:ModelScript.segmentName ;
+        sh:severity     sh:Violation .
+
+emtc:ModelScript.sequenceNumber-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ModelScript.sequenceNumber-cardinality" ;
+        sh:order        2 ;
+        sh:path         emt:ModelScript.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:ModelScript.sequenceNumber-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:integer ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ModelScript.sequenceNumber-datatype" ;
+        sh:order        2 ;
+        sh:path         emt:ModelScript.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:ModelScript.sequenceNumber-valueRange
+        rdf:type        sh:PropertyShape ;
+        sh:minInclusive 1 ;
+        sh:description  "This constraint validates the value range of the property." ;
+        sh:message      "The value violates the declared valueRange." ;
+        sh:name         "ModelScript.sequenceNumber-valueRange" ;
+        sh:order        2 ;
+        sh:path         emt:ModelScript.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:ModelScript.source-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ModelScript.source-cardinality" ;
+        sh:order        3 ;
+        sh:path         emt:ModelScript.source ;
+        sh:severity     sh:Violation .
+
+emtc:ModelScript.source-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ModelScript.source-datatype" ;
+        sh:order        3 ;
+        sh:path         emt:ModelScript.source ;
+        sh:severity     sh:Violation .
+
+emtc:ModelTerminal
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:IdentifiedObject.description-cardinality ,
+                        emtc:IdentifiedObject.description-datatype ,
+                        emtc:IdentifiedObject.mRID-cardinality ,
+                        emtc:IdentifiedObject.mRID-datatype ,
+                        emtc:IdentifiedObject.name-cardinality ,
+                        emtc:IdentifiedObject.name-datatype ,
+                        emtc:ModelTerminal.ConnectivityNode-cardinality ,
+                        emtc:ModelTerminal.ConnectivityNode-valueType ,
+                        emtc:ModelTerminal.DetailedModelDynamics-cardinality ,
+                        emtc:ModelTerminal.DetailedModelDynamics-valueType ,
+                        emtc:ModelTerminal.phase-cardinality ,
+                        emtc:ModelTerminal.phase-datatype ,
+                        emtc:ModelTerminal.phase-valueRange ,
+                        emtc:ModelTerminal.sequenceNumber-cardinality ,
+                        emtc:ModelTerminal.sequenceNumber-datatype ,
+                        emtc:ModelTerminal.sequenceNumber-valueRange ;
+        sh:targetClass  emt:ModelTerminal .
+
+emtc:ModelTerminal.ConnectivityNode-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ModelTerminal.ConnectivityNode-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:ModelTerminal.ConnectivityNode ;
+        sh:severity     sh:Violation .
+
+emtc:ModelTerminal.ConnectivityNode-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "The value type shall be an IRI referencing an instance of the class: cim:ConnectivityNode" ;
+        sh:name         "ModelTerminal.ConnectivityNode-valueType" ;
+        sh:order        0 ;
+        sh:path         emt:ModelTerminal.ConnectivityNode ;
+        sh:severity     sh:Violation .
+
+emtc:ModelTerminal.DetailedModelDynamics-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ModelTerminal.DetailedModelDynamics-cardinality" ;
+        sh:order        1 ;
+        sh:path         emt:ModelTerminal.DetailedModelDynamics ;
+        sh:severity     sh:Violation .
+
+emtc:ModelTerminal.DetailedModelDynamics-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "The value type shall be an IRI referencing an instance of the class: cim:DetailedModelDynamics" ;
+        sh:name         "ModelTerminal.DetailedModelDynamics-valueType" ;
+        sh:order        1 ;
+        sh:path         emt:ModelTerminal.DetailedModelDynamics ;
+        sh:severity     sh:Violation .
+
+emtc:ModelTerminal.phase-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ModelTerminal.phase-cardinality" ;
+        sh:order        2 ;
+        sh:path         emt:ModelTerminal.phase ;
+        sh:severity     sh:Violation .
+
+emtc:ModelTerminal.phase-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:integer ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ModelTerminal.phase-datatype" ;
+        sh:order        2 ;
+        sh:path         emt:ModelTerminal.phase ;
+        sh:severity     sh:Violation .
+
+emtc:ModelTerminal.phase-valueRange
+        rdf:type        sh:PropertyShape ;
+        sh:minInclusive 1 ;
+        sh:description  "This constraint validates the value range of the property." ;
+        sh:message      "The value violates the declared valueRange." ;
+        sh:name         "ModelTerminal.phase-valueRange" ;
+        sh:order        2 ;
+        sh:path         emt:ModelTerminal.phase ;
+        sh:severity     sh:Violation .
+
+emtc:ModelTerminal.sequenceNumber-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ModelTerminal.sequenceNumber-cardinality" ;
+        sh:order        3 ;
+        sh:path         emt:ModelTerminal.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:ModelTerminal.sequenceNumber-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:integer ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ModelTerminal.sequenceNumber-datatype" ;
+        sh:order        3 ;
+        sh:path         emt:ModelTerminal.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:ModelTerminal.sequenceNumber-valueRange
+        rdf:type        sh:PropertyShape ;
+        sh:minInclusive 1 ;
+        sh:description  "This constraint validates the value range of the property." ;
+        sh:message      "The value violates the declared valueRange." ;
+        sh:name         "ModelTerminal.sequenceNumber-valueRange" ;
+        sh:order        3 ;
+        sh:path         emt:ModelTerminal.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterCategory
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:IdentifiedObject.description-cardinality ,
+                        emtc:IdentifiedObject.description-datatype ,
+                        emtc:IdentifiedObject.mRID-cardinality ,
+                        emtc:IdentifiedObject.mRID-datatype ,
+                        emtc:IdentifiedObject.name-cardinality ,
+                        emtc:IdentifiedObject.name-datatype ,
+                        emtc:ParameterCategory.ModelDefinition-cardinality ,
+                        emtc:ParameterCategory.ModelDefinition-valueType ,
+                        emtc:ParameterCategory.condition-cardinality ,
+                        emtc:ParameterCategory.condition-datatype ,
+                        emtc:ParameterCategory.sequenceNumber-cardinality ,
+                        emtc:ParameterCategory.sequenceNumber-datatype ,
+                        emtc:ParameterCategory.sequenceNumber-valueRange ,
+                        emtc:ParameterCategory.visible-cardinality ,
+                        emtc:ParameterCategory.visible-datatype ;
+        sh:targetClass  emt:ParameterCategory .
+
+emtc:ParameterCategory.ModelDefinition-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ParameterCategory.ModelDefinition-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterCategory.ModelDefinition ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterCategory.ModelDefinition-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "The value type shall be an IRI referencing an instance of the class: cim:DetailedModelTypeDynamics" ;
+        sh:name         "ParameterCategory.ModelDefinition-valueType" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterCategory.ModelDefinition ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterCategory.condition-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "ParameterCategory.condition-cardinality" ;
+        sh:order        1 ;
+        sh:path         emt:ParameterCategory.condition ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterCategory.condition-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ParameterCategory.condition-datatype" ;
+        sh:order        1 ;
+        sh:path         emt:ParameterCategory.condition ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterCategory.sequenceNumber-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ParameterCategory.sequenceNumber-cardinality" ;
+        sh:order        2 ;
+        sh:path         emt:ParameterCategory.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterCategory.sequenceNumber-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:integer ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ParameterCategory.sequenceNumber-datatype" ;
+        sh:order        2 ;
+        sh:path         emt:ParameterCategory.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterCategory.sequenceNumber-valueRange
+        rdf:type        sh:PropertyShape ;
+        sh:minInclusive 1 ;
+        sh:description  "This constraint validates the value range of the property." ;
+        sh:message      "The value violates the declared valueRange." ;
+        sh:name         "ParameterCategory.sequenceNumber-valueRange" ;
+        sh:order        2 ;
+        sh:path         emt:ParameterCategory.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterCategory.visible-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "ParameterCategory.visible-cardinality" ;
+        sh:order        3 ;
+        sh:path         emt:ParameterCategory.visible ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterCategory.visible-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ParameterCategory.visible-datatype" ;
+        sh:order        3 ;
+        sh:path         emt:ParameterCategory.visible ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:DetailedModelDescriptor.DetailedModelTypeDynamics-cardinality ,
+                        emtc:DetailedModelDescriptor.DetailedModelTypeDynamics-valueType ,
+                        emtc:IdentifiedObject.description-cardinality ,
+                        emtc:IdentifiedObject.description-datatype ,
+                        emtc:IdentifiedObject.mRID-cardinality ,
+                        emtc:IdentifiedObject.mRID-datatype ,
+                        emtc:IdentifiedObject.name-cardinality ,
+                        emtc:IdentifiedObject.name-datatype ,
+                        emtc:ParameterDescriptor.engineeringUnit-cardinality ,
+                        emtc:ParameterDescriptor.engineeringUnit-datatype ,
+                        emtc:ParameterDescriptor.sequenceNumber-cardinality ,
+                        emtc:ParameterDescriptor.sequenceNumber-datatype ,
+                        emtc:ParameterDescriptor.sequenceNumber-valueRange ,
+                        emtc:ParameterDescriptor.typicalValue-cardinality ,
+                        emtc:ParameterDescriptor.typicalValue-datatype ;
+        sh:targetClass  cim:ParameterDescriptor .
+
+emtc:ParameterDescriptor.ParameterCategory-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "ParameterDescriptor.ParameterCategory-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterDescriptor.ParameterCategory ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.ParameterCategory-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:ParameterDescriptor.ParameterCategory-cardinality ,
+                        emtc:ParameterDescriptor.ParameterCategory-valueType ;
+        sh:targetSubjectsOf  emt:ParameterDescriptor.ParameterCategory .
+
+emtc:ParameterDescriptor.ParameterCategory-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:in           ( emt:ParameterCategory ) ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: emt:ParameterCategory" ;
+        sh:name         "ParameterDescriptor.ParameterCategory-valueType" ;
+        sh:order        0 ;
+        sh:path         ( emt:ParameterDescriptor.ParameterCategory rdf:type ) ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.condition-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "ParameterDescriptor.condition-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterDescriptor.condition ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.condition-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ParameterDescriptor.condition-datatype" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterDescriptor.condition ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.condition-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:ParameterDescriptor.condition-cardinality ,
+                        emtc:ParameterDescriptor.condition-datatype ;
+        sh:targetSubjectsOf  emt:ParameterDescriptor.condition .
+
+emtc:ParameterDescriptor.contentType-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "ParameterDescriptor.contentType-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterDescriptor.contentType ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.contentType-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ParameterDescriptor.contentType-datatype" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterDescriptor.contentType ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.contentType-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:ParameterDescriptor.contentType-cardinality ,
+                        emtc:ParameterDescriptor.contentType-datatype ;
+        sh:targetSubjectsOf  emt:ParameterDescriptor.contentType .
+
+emtc:ParameterDescriptor.dimension-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "ParameterDescriptor.dimension-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterDescriptor.dimension ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.dimension-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ParameterDescriptor.dimension-datatype" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterDescriptor.dimension ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.dimension-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:ParameterDescriptor.dimension-cardinality ,
+                        emtc:ParameterDescriptor.dimension-datatype ;
+        sh:targetSubjectsOf  emt:ParameterDescriptor.dimension .
+
+emtc:ParameterDescriptor.engineeringUnit-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "ParameterDescriptor.engineeringUnit-cardinality" ;
+        sh:order        2 ;
+        sh:path         cim:ParameterDescriptor.engineeringUnit ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.engineeringUnit-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ParameterDescriptor.engineeringUnit-datatype" ;
+        sh:order        2 ;
+        sh:path         cim:ParameterDescriptor.engineeringUnit ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.group-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "ParameterDescriptor.group-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterDescriptor.group ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.group-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ParameterDescriptor.group-datatype" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterDescriptor.group ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.group-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:ParameterDescriptor.group-cardinality ,
+                        emtc:ParameterDescriptor.group-datatype ;
+        sh:targetSubjectsOf  emt:ParameterDescriptor.group .
+
+emtc:ParameterDescriptor.intent-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "ParameterDescriptor.intent-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterDescriptor.intent ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.intent-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ParameterDescriptor.intent-datatype" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterDescriptor.intent ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.intent-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:ParameterDescriptor.intent-cardinality ,
+                        emtc:ParameterDescriptor.intent-datatype ;
+        sh:targetSubjectsOf  emt:ParameterDescriptor.intent .
+
+emtc:ParameterDescriptor.maximum-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "ParameterDescriptor.maximum-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterDescriptor.maximum ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.maximum-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ParameterDescriptor.maximum-datatype" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterDescriptor.maximum ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.maximum-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:ParameterDescriptor.maximum-cardinality ,
+                        emtc:ParameterDescriptor.maximum-datatype ;
+        sh:targetSubjectsOf  emt:ParameterDescriptor.maximum .
+
+emtc:ParameterDescriptor.minimum-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "ParameterDescriptor.minimum-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterDescriptor.minimum ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.minimum-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ParameterDescriptor.minimum-datatype" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterDescriptor.minimum ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.minimum-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:ParameterDescriptor.minimum-cardinality ,
+                        emtc:ParameterDescriptor.minimum-datatype ;
+        sh:targetSubjectsOf  emt:ParameterDescriptor.minimum .
+
+emtc:ParameterDescriptor.parameterType-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "ParameterDescriptor.parameterType-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterDescriptor.parameterType ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.parameterType-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ParameterDescriptor.parameterType-datatype" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterDescriptor.parameterType ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.parameterType-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:ParameterDescriptor.parameterType-cardinality ,
+                        emtc:ParameterDescriptor.parameterType-datatype ;
+        sh:targetSubjectsOf  emt:ParameterDescriptor.parameterType .
+
+emtc:ParameterDescriptor.sequenceNumber-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "ParameterDescriptor.sequenceNumber-cardinality" ;
+        sh:order        1 ;
+        sh:path         cim:ParameterDescriptor.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.sequenceNumber-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:integer ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ParameterDescriptor.sequenceNumber-datatype" ;
+        sh:order        1 ;
+        sh:path         cim:ParameterDescriptor.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.sequenceNumber-valueRange
+        rdf:type        sh:PropertyShape ;
+        sh:minInclusive 1 ;
+        sh:description  "This constraint validates the value range of the property." ;
+        sh:message      "The value violates the declared valueRange." ;
+        sh:name         "ParameterDescriptor.sequenceNumber-valueRange" ;
+        sh:order        1 ;
+        sh:path         cim:ParameterDescriptor.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.typicalValue-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "ParameterDescriptor.typicalValue-cardinality" ;
+        sh:order        3 ;
+        sh:path         cim:ParameterDescriptor.typicalValue ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterDescriptor.typicalValue-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ParameterDescriptor.typicalValue-datatype" ;
+        sh:order        3 ;
+        sh:path         cim:ParameterDescriptor.typicalValue ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterValue
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:ParameterValue.DetailedModelDynamics-cardinality ,
+                        emtc:ParameterValue.DetailedModelDynamics-valueType ,
+                        emtc:ParameterValue.ParameterDescriptor-cardinality ,
+                        emtc:ParameterValue.ParameterDescriptor-valueType ,
+                        emtc:ParameterValue.value-cardinality ,
+                        emtc:ParameterValue.value-datatype ;
+        sh:targetClass  cim:ParameterValue .
+
+emtc:ParameterValue.DetailedModelDynamics-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ParameterValue.DetailedModelDynamics-cardinality" ;
+        sh:order        2 ;
+        sh:path         cim:ParameterValue.DetailedModelDynamics ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterValue.DetailedModelDynamics-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "The value type shall be an IRI referencing an instance of the class: cim:DetailedModelDynamics" ;
+        sh:name         "ParameterValue.DetailedModelDynamics-valueType" ;
+        sh:order        2 ;
+        sh:path         cim:ParameterValue.DetailedModelDynamics ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterValue.ParameterDescriptor-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ParameterValue.ParameterDescriptor-cardinality" ;
+        sh:order        1 ;
+        sh:path         cim:ParameterValue.ParameterDescriptor ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterValue.ParameterDescriptor-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "The value type shall be an IRI referencing an instance of the class: cim:ParameterDescriptor" ;
+        sh:name         "ParameterValue.ParameterDescriptor-valueType" ;
+        sh:order        1 ;
+        sh:path         cim:ParameterValue.ParameterDescriptor ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterValue.numericValue-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "ParameterValue.numericValue-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterValue.numericValue ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterValue.numericValue-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:float ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ParameterValue.numericValue-datatype" ;
+        sh:order        0 ;
+        sh:path         emt:ParameterValue.numericValue ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterValue.numericValue-nodeShape
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:ParameterValue.numericValue-cardinality ,
+                        emtc:ParameterValue.numericValue-datatype ;
+        sh:targetSubjectsOf  emt:ParameterValue.numericValue .
+
+emtc:ParameterValue.value-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ParameterValue.value-cardinality" ;
+        sh:order        0 ;
+        sh:path         cim:ParameterValue.value ;
+        sh:severity     sh:Violation .
+
+emtc:ParameterValue.value-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ParameterValue.value-datatype" ;
+        sh:order        0 ;
+        sh:path         cim:ParameterValue.value ;
+        sh:severity     sh:Violation .
+
+emtc:RightOfWay
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:IdentifiedObject.description-cardinality ,
+                        emtc:IdentifiedObject.description-datatype ,
+                        emtc:IdentifiedObject.mRID-cardinality ,
+                        emtc:IdentifiedObject.mRID-datatype ,
+                        emtc:IdentifiedObject.name-cardinality ,
+                        emtc:IdentifiedObject.name-datatype ;
+        sh:targetClass  emt:RightOfWay .
+
+emtc:RightOfWayRecord
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:RightOfWayRecord.ParentRecord-cardinality ,
+                        emtc:RightOfWayRecord.ParentRecord-valueType ,
+                        emtc:RightOfWayRecord.RightOfWay-cardinality ,
+                        emtc:RightOfWayRecord.RightOfWay-valueType ,
+                        emtc:RightOfWayRecord.key-cardinality ,
+                        emtc:RightOfWayRecord.key-datatype ,
+                        emtc:RightOfWayRecord.key-length ,
+                        emtc:RightOfWayRecord.sequenceNumber-cardinality ,
+                        emtc:RightOfWayRecord.sequenceNumber-datatype ,
+                        emtc:RightOfWayRecord.sequenceNumber-valueRange ,
+                        emtc:RightOfWayRecord.unit-cardinality ,
+                        emtc:RightOfWayRecord.unit-datatype ,
+                        emtc:RightOfWayRecord.values-cardinality ,
+                        emtc:RightOfWayRecord.values-datatype ;
+        sh:targetClass  emt:RightOfWayRecord .
+
+emtc:RightOfWayRecord.ParentRecord-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "RightOfWayRecord.ParentRecord-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:RightOfWayRecord.ParentRecord ;
+        sh:severity     sh:Violation .
+
+emtc:RightOfWayRecord.ParentRecord-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:in           ( emt:RightOfWayRecord ) ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: emt:RightOfWayRecord" ;
+        sh:name         "RightOfWayRecord.ParentRecord-valueType" ;
+        sh:order        0 ;
+        sh:path         ( emt:RightOfWayRecord.ParentRecord rdf:type ) ;
+        sh:severity     sh:Violation .
+
+emtc:RightOfWayRecord.RightOfWay-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "RightOfWayRecord.RightOfWay-cardinality" ;
+        sh:order        1 ;
+        sh:path         emt:RightOfWayRecord.RightOfWay ;
+        sh:severity     sh:Violation .
+
+emtc:RightOfWayRecord.RightOfWay-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:in           ( emt:RightOfWay ) ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: emt:RightOfWay" ;
+        sh:name         "RightOfWayRecord.RightOfWay-valueType" ;
+        sh:order        1 ;
+        sh:path         ( emt:RightOfWayRecord.RightOfWay rdf:type ) ;
+        sh:severity     sh:Violation .
+
+emtc:RightOfWayRecord.key-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "RightOfWayRecord.key-cardinality" ;
+        sh:order        2 ;
+        sh:path         emt:RightOfWayRecord.key ;
+        sh:severity     sh:Violation .
+
+emtc:RightOfWayRecord.key-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "RightOfWayRecord.key-datatype" ;
+        sh:order        2 ;
+        sh:path         emt:RightOfWayRecord.key ;
+        sh:severity     sh:Violation .
+
+emtc:RightOfWayRecord.key-length
+        rdf:type        sh:PropertyShape ;
+        sh:minLength    1 ;
+        sh:description  "This constraint validates the length of the property value." ;
+        sh:message      "The value violates the declared length." ;
+        sh:name         "RightOfWayRecord.key-length" ;
+        sh:order        2 ;
+        sh:path         emt:RightOfWayRecord.key ;
+        sh:severity     sh:Violation .
+
+emtc:RightOfWayRecord.sequenceNumber-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "RightOfWayRecord.sequenceNumber-cardinality" ;
+        sh:order        3 ;
+        sh:path         emt:RightOfWayRecord.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:RightOfWayRecord.sequenceNumber-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:integer ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "RightOfWayRecord.sequenceNumber-datatype" ;
+        sh:order        3 ;
+        sh:path         emt:RightOfWayRecord.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:RightOfWayRecord.sequenceNumber-valueRange
+        rdf:type        sh:PropertyShape ;
+        sh:minInclusive 1 ;
+        sh:description  "This constraint validates the value range of the property." ;
+        sh:message      "The value violates the declared valueRange." ;
+        sh:name         "RightOfWayRecord.sequenceNumber-valueRange" ;
+        sh:order        3 ;
+        sh:path         emt:RightOfWayRecord.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:RightOfWayRecord.unit-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "RightOfWayRecord.unit-cardinality" ;
+        sh:order        4 ;
+        sh:path         emt:RightOfWayRecord.unit ;
+        sh:severity     sh:Violation .
+
+emtc:RightOfWayRecord.unit-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "RightOfWayRecord.unit-datatype" ;
+        sh:order        4 ;
+        sh:path         emt:RightOfWayRecord.unit ;
+        sh:severity     sh:Violation .
+
+emtc:RightOfWayRecord.values-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "RightOfWayRecord.values-cardinality" ;
+        sh:order        5 ;
+        sh:path         emt:RightOfWayRecord.values ;
+        sh:severity     sh:Violation .
+
+emtc:RightOfWayRecord.values-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "RightOfWayRecord.values-datatype" ;
+        sh:order        5 ;
+        sh:path         emt:RightOfWayRecord.values ;
+        sh:severity     sh:Violation .
+
+emtc:SignalConnection
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:SignalConnection.IdentifiedObject-valueType ,
+                        emtc:SignalConnection.SignalNet-cardinality ,
+                        emtc:SignalConnection.SignalNet-valueType ,
+                        emtc:SignalConnection.connectionKind-cardinality ,
+                        emtc:SignalConnection.connectionKind-datatype ,
+                        emtc:SignalConnection.offset-cardinality ,
+                        emtc:SignalConnection.offset-datatype ,
+                        emtc:SignalConnection.offset-valueRange ,
+                        emtc:SignalConnection.placementPath-cardinality ,
+                        emtc:SignalConnection.placementPath-datatype ,
+                        emtc:SignalConnection.portName-cardinality ,
+                        emtc:SignalConnection.portName-datatype ,
+                        emtc:SignalConnection.value-cardinality ,
+                        emtc:SignalConnection.value-datatype ,
+                        emtc:SignalConnection.width-cardinality ,
+                        emtc:SignalConnection.width-datatype ,
+                        emtc:SignalConnection.width-valueRange ,
+                        emtc:SignalConnection.writes-cardinality ,
+                        emtc:SignalConnection.writes-datatype ;
+        sh:targetClass  emt:SignalConnection .
+
+emtc:SignalConnection.IdentifiedObject-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "The value type shall be an IRI referencing an instance of the class: cim:IdentifiedObject" ;
+        sh:name         "SignalConnection.IdentifiedObject-valueType" ;
+        sh:order        0 ;
+        sh:path         emt:SignalConnection.IdentifiedObject ;
+        sh:severity     sh:Violation .
+
+emtc:SignalConnection.SignalNet-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "SignalConnection.SignalNet-cardinality" ;
+        sh:order        1 ;
+        sh:path         emt:SignalConnection.SignalNet ;
+        sh:severity     sh:Violation .
+
+emtc:SignalConnection.SignalNet-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:in           ( emt:SignalNet ) ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: emt:SignalNet" ;
+        sh:name         "SignalConnection.SignalNet-valueType" ;
+        sh:order        1 ;
+        sh:path         ( emt:SignalConnection.SignalNet rdf:type ) ;
+        sh:severity     sh:Violation .
+
+emtc:SignalConnection.connectionKind-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "SignalConnection.connectionKind-cardinality" ;
+        sh:order        2 ;
+        sh:path         emt:SignalConnection.connectionKind ;
+        sh:severity     sh:Violation .
+
+emtc:SignalConnection.connectionKind-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SignalConnection.connectionKind-datatype" ;
+        sh:order        2 ;
+        sh:path         emt:SignalConnection.connectionKind ;
+        sh:severity     sh:Violation .
+
+emtc:SignalConnection.offset-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "SignalConnection.offset-cardinality" ;
+        sh:order        3 ;
+        sh:path         emt:SignalConnection.offset ;
+        sh:severity     sh:Violation .
+
+emtc:SignalConnection.offset-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:integer ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SignalConnection.offset-datatype" ;
+        sh:order        3 ;
+        sh:path         emt:SignalConnection.offset ;
+        sh:severity     sh:Violation .
+
+emtc:SignalConnection.offset-valueRange
+        rdf:type        sh:PropertyShape ;
+        sh:minInclusive 1 ;
+        sh:description  "This constraint validates the value range of the property." ;
+        sh:message      "The value violates the declared valueRange." ;
+        sh:name         "SignalConnection.offset-valueRange" ;
+        sh:order        3 ;
+        sh:path         emt:SignalConnection.offset ;
+        sh:severity     sh:Violation .
+
+emtc:SignalConnection.placementPath-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "SignalConnection.placementPath-cardinality" ;
+        sh:order        4 ;
+        sh:path         emt:SignalConnection.placementPath ;
+        sh:severity     sh:Violation .
+
+emtc:SignalConnection.placementPath-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SignalConnection.placementPath-datatype" ;
+        sh:order        4 ;
+        sh:path         emt:SignalConnection.placementPath ;
+        sh:severity     sh:Violation .
+
+emtc:SignalConnection.portName-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "SignalConnection.portName-cardinality" ;
+        sh:order        5 ;
+        sh:path         emt:SignalConnection.portName ;
+        sh:severity     sh:Violation .
+
+emtc:SignalConnection.portName-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SignalConnection.portName-datatype" ;
+        sh:order        5 ;
+        sh:path         emt:SignalConnection.portName ;
+        sh:severity     sh:Violation .
+
+emtc:SignalConnection.value-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "SignalConnection.value-cardinality" ;
+        sh:order        6 ;
+        sh:path         emt:SignalConnection.value ;
+        sh:severity     sh:Violation .
+
+emtc:SignalConnection.value-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SignalConnection.value-datatype" ;
+        sh:order        6 ;
+        sh:path         emt:SignalConnection.value ;
+        sh:severity     sh:Violation .
+
+emtc:SignalConnection.width-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "SignalConnection.width-cardinality" ;
+        sh:order        7 ;
+        sh:path         emt:SignalConnection.width ;
+        sh:severity     sh:Violation .
+
+emtc:SignalConnection.width-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:integer ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SignalConnection.width-datatype" ;
+        sh:order        7 ;
+        sh:path         emt:SignalConnection.width ;
+        sh:severity     sh:Violation .
+
+emtc:SignalConnection.width-valueRange
+        rdf:type        sh:PropertyShape ;
+        sh:minInclusive 1 ;
+        sh:description  "This constraint validates the value range of the property." ;
+        sh:message      "The value violates the declared valueRange." ;
+        sh:name         "SignalConnection.width-valueRange" ;
+        sh:order        7 ;
+        sh:path         emt:SignalConnection.width ;
+        sh:severity     sh:Violation .
+
+emtc:SignalConnection.writes-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "SignalConnection.writes-cardinality" ;
+        sh:order        8 ;
+        sh:path         emt:SignalConnection.writes ;
+        sh:severity     sh:Violation .
+
+emtc:SignalConnection.writes-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:boolean ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SignalConnection.writes-datatype" ;
+        sh:order        8 ;
+        sh:path         emt:SignalConnection.writes ;
+        sh:severity     sh:Violation .
+
+emtc:SignalNet
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:IdentifiedObject.description-cardinality ,
+                        emtc:IdentifiedObject.description-datatype ,
+                        emtc:IdentifiedObject.mRID-cardinality ,
+                        emtc:IdentifiedObject.mRID-datatype ,
+                        emtc:IdentifiedObject.name-cardinality ,
+                        emtc:IdentifiedObject.name-datatype ,
+                        emtc:SignalNet.TransmittingSignalNet-valueType ,
+                        emtc:SignalNet.width-cardinality ,
+                        emtc:SignalNet.width-datatype ,
+                        emtc:SignalNet.width-valueRange ,
+                        emtc:SignalNet.widthConflict-cardinality ,
+                        emtc:SignalNet.widthConflict-datatype ;
+        sh:targetClass  emt:SignalNet .
+
+emtc:SignalNet.TransmittingSignalNet-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:in           ( emt:SignalNet ) ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: emt:SignalNet" ;
+        sh:name         "SignalNet.TransmittingSignalNet-valueType" ;
+        sh:order        0 ;
+        sh:path         ( emt:SignalNet.TransmittingSignalNet rdf:type ) ;
+        sh:severity     sh:Violation .
+
+emtc:SignalNet.width-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "SignalNet.width-cardinality" ;
+        sh:order        1 ;
+        sh:path         emt:SignalNet.width ;
+        sh:severity     sh:Violation .
+
+emtc:SignalNet.width-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:integer ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SignalNet.width-datatype" ;
+        sh:order        1 ;
+        sh:path         emt:SignalNet.width ;
+        sh:severity     sh:Violation .
+
+emtc:SignalNet.width-valueRange
+        rdf:type        sh:PropertyShape ;
+        sh:minInclusive 1 ;
+        sh:description  "This constraint validates the value range of the property." ;
+        sh:message      "The value violates the declared valueRange." ;
+        sh:name         "SignalNet.width-valueRange" ;
+        sh:order        1 ;
+        sh:path         emt:SignalNet.width ;
+        sh:severity     sh:Violation .
+
+emtc:SignalNet.widthConflict-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "SignalNet.widthConflict-cardinality" ;
+        sh:order        2 ;
+        sh:path         emt:SignalNet.widthConflict ;
+        sh:severity     sh:Violation .
+
+emtc:SignalNet.widthConflict-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:boolean ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SignalNet.widthConflict-datatype" ;
+        sh:order        2 ;
+        sh:path         emt:SignalNet.widthConflict ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:IdentifiedObject.description-cardinality ,
+                        emtc:IdentifiedObject.description-datatype ,
+                        emtc:IdentifiedObject.mRID-cardinality ,
+                        emtc:IdentifiedObject.mRID-datatype ,
+                        emtc:IdentifiedObject.name-cardinality ,
+                        emtc:IdentifiedObject.name-datatype ,
+                        emtc:SimulationCase.advancedFlags-cardinality ,
+                        emtc:SimulationCase.advancedFlags-datatype ,
+                        emtc:SimulationCase.branchThreshold-cardinality ,
+                        emtc:SimulationCase.branchThreshold-datatype ,
+                        emtc:SimulationCase.chatterThreshold-cardinality ,
+                        emtc:SimulationCase.chatterThreshold-datatype ,
+                        emtc:SimulationCase.duration-cardinality ,
+                        emtc:SimulationCase.duration-datatype ,
+                        emtc:SimulationCase.duration-valueRange ,
+                        emtc:SimulationCase.multipleRunCount-cardinality ,
+                        emtc:SimulationCase.multipleRunCount-datatype ,
+                        emtc:SimulationCase.multipleRunFilename-cardinality ,
+                        emtc:SimulationCase.multipleRunFilename-datatype ,
+                        emtc:SimulationCase.multipleRunMode-cardinality ,
+                        emtc:SimulationCase.multipleRunMode-datatype ,
+                        emtc:SimulationCase.optionsFlags-cardinality ,
+                        emtc:SimulationCase.optionsFlags-datatype ,
+                        emtc:SimulationCase.outputFilename-cardinality ,
+                        emtc:SimulationCase.outputFilename-datatype ,
+                        emtc:SimulationCase.plotStep-cardinality ,
+                        emtc:SimulationCase.plotStep-datatype ,
+                        emtc:SimulationCase.plotStep-valueRange ,
+                        emtc:SimulationCase.plotType-cardinality ,
+                        emtc:SimulationCase.plotType-datatype ,
+                        emtc:SimulationCase.snapshotFilename-cardinality ,
+                        emtc:SimulationCase.snapshotFilename-datatype ,
+                        emtc:SimulationCase.snapshotTime-cardinality ,
+                        emtc:SimulationCase.snapshotTime-datatype ,
+                        emtc:SimulationCase.sparsityThreshold-cardinality ,
+                        emtc:SimulationCase.sparsityThreshold-datatype ,
+                        emtc:SimulationCase.startFromSnapshot-cardinality ,
+                        emtc:SimulationCase.startFromSnapshot-datatype ,
+                        emtc:SimulationCase.startupFilename-cardinality ,
+                        emtc:SimulationCase.startupFilename-datatype ,
+                        emtc:SimulationCase.timeStep-cardinality ,
+                        emtc:SimulationCase.timeStep-datatype ,
+                        emtc:SimulationCase.timeStep-valueRange ;
+        sh:targetClass  emt:SimulationCase .
+
+emtc:SimulationCase.advancedFlags-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "SimulationCase.advancedFlags-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:SimulationCase.advancedFlags ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.advancedFlags-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SimulationCase.advancedFlags-datatype" ;
+        sh:order        0 ;
+        sh:path         emt:SimulationCase.advancedFlags ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.branchThreshold-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "SimulationCase.branchThreshold-cardinality" ;
+        sh:order        1 ;
+        sh:path         emt:SimulationCase.branchThreshold ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.branchThreshold-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SimulationCase.branchThreshold-datatype" ;
+        sh:order        1 ;
+        sh:path         emt:SimulationCase.branchThreshold ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.chatterThreshold-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "SimulationCase.chatterThreshold-cardinality" ;
+        sh:order        2 ;
+        sh:path         emt:SimulationCase.chatterThreshold ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.chatterThreshold-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SimulationCase.chatterThreshold-datatype" ;
+        sh:order        2 ;
+        sh:path         emt:SimulationCase.chatterThreshold ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.duration-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "SimulationCase.duration-cardinality" ;
+        sh:order        3 ;
+        sh:path         emt:SimulationCase.duration ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.duration-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:float ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SimulationCase.duration-datatype" ;
+        sh:order        3 ;
+        sh:path         emt:SimulationCase.duration ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.duration-valueRange
+        rdf:type        sh:PropertyShape ;
+        sh:minExclusive 0 ;
+        sh:description  "This constraint validates the value range of the property." ;
+        sh:message      "The value violates the declared valueRange." ;
+        sh:name         "SimulationCase.duration-valueRange" ;
+        sh:order        3 ;
+        sh:path         emt:SimulationCase.duration ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.multipleRunCount-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "SimulationCase.multipleRunCount-cardinality" ;
+        sh:order        4 ;
+        sh:path         emt:SimulationCase.multipleRunCount ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.multipleRunCount-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SimulationCase.multipleRunCount-datatype" ;
+        sh:order        4 ;
+        sh:path         emt:SimulationCase.multipleRunCount ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.multipleRunFilename-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "SimulationCase.multipleRunFilename-cardinality" ;
+        sh:order        5 ;
+        sh:path         emt:SimulationCase.multipleRunFilename ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.multipleRunFilename-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SimulationCase.multipleRunFilename-datatype" ;
+        sh:order        5 ;
+        sh:path         emt:SimulationCase.multipleRunFilename ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.multipleRunMode-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "SimulationCase.multipleRunMode-cardinality" ;
+        sh:order        6 ;
+        sh:path         emt:SimulationCase.multipleRunMode ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.multipleRunMode-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SimulationCase.multipleRunMode-datatype" ;
+        sh:order        6 ;
+        sh:path         emt:SimulationCase.multipleRunMode ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.optionsFlags-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "SimulationCase.optionsFlags-cardinality" ;
+        sh:order        7 ;
+        sh:path         emt:SimulationCase.optionsFlags ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.optionsFlags-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SimulationCase.optionsFlags-datatype" ;
+        sh:order        7 ;
+        sh:path         emt:SimulationCase.optionsFlags ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.outputFilename-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "SimulationCase.outputFilename-cardinality" ;
+        sh:order        8 ;
+        sh:path         emt:SimulationCase.outputFilename ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.outputFilename-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SimulationCase.outputFilename-datatype" ;
+        sh:order        8 ;
+        sh:path         emt:SimulationCase.outputFilename ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.plotStep-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "SimulationCase.plotStep-cardinality" ;
+        sh:order        9 ;
+        sh:path         emt:SimulationCase.plotStep ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.plotStep-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:float ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SimulationCase.plotStep-datatype" ;
+        sh:order        9 ;
+        sh:path         emt:SimulationCase.plotStep ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.plotStep-valueRange
+        rdf:type        sh:PropertyShape ;
+        sh:minExclusive 0 ;
+        sh:description  "This constraint validates the value range of the property." ;
+        sh:message      "The value violates the declared valueRange." ;
+        sh:name         "SimulationCase.plotStep-valueRange" ;
+        sh:order        9 ;
+        sh:path         emt:SimulationCase.plotStep ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.plotType-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "SimulationCase.plotType-cardinality" ;
+        sh:order        10 ;
+        sh:path         emt:SimulationCase.plotType ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.plotType-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SimulationCase.plotType-datatype" ;
+        sh:order        10 ;
+        sh:path         emt:SimulationCase.plotType ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.snapshotFilename-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "SimulationCase.snapshotFilename-cardinality" ;
+        sh:order        11 ;
+        sh:path         emt:SimulationCase.snapshotFilename ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.snapshotFilename-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SimulationCase.snapshotFilename-datatype" ;
+        sh:order        11 ;
+        sh:path         emt:SimulationCase.snapshotFilename ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.snapshotTime-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "SimulationCase.snapshotTime-cardinality" ;
+        sh:order        12 ;
+        sh:path         emt:SimulationCase.snapshotTime ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.snapshotTime-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:float ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SimulationCase.snapshotTime-datatype" ;
+        sh:order        12 ;
+        sh:path         emt:SimulationCase.snapshotTime ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.sparsityThreshold-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "SimulationCase.sparsityThreshold-cardinality" ;
+        sh:order        13 ;
+        sh:path         emt:SimulationCase.sparsityThreshold ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.sparsityThreshold-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SimulationCase.sparsityThreshold-datatype" ;
+        sh:order        13 ;
+        sh:path         emt:SimulationCase.sparsityThreshold ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.startFromSnapshot-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "SimulationCase.startFromSnapshot-cardinality" ;
+        sh:order        14 ;
+        sh:path         emt:SimulationCase.startFromSnapshot ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.startFromSnapshot-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:boolean ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SimulationCase.startFromSnapshot-datatype" ;
+        sh:order        14 ;
+        sh:path         emt:SimulationCase.startFromSnapshot ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.startupFilename-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "SimulationCase.startupFilename-cardinality" ;
+        sh:order        15 ;
+        sh:path         emt:SimulationCase.startupFilename ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.startupFilename-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SimulationCase.startupFilename-datatype" ;
+        sh:order        15 ;
+        sh:path         emt:SimulationCase.startupFilename ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.timeStep-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "SimulationCase.timeStep-cardinality" ;
+        sh:order        16 ;
+        sh:path         emt:SimulationCase.timeStep ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.timeStep-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:float ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SimulationCase.timeStep-datatype" ;
+        sh:order        16 ;
+        sh:path         emt:SimulationCase.timeStep ;
+        sh:severity     sh:Violation .
+
+emtc:SimulationCase.timeStep-valueRange
+        rdf:type        sh:PropertyShape ;
+        sh:minExclusive 0 ;
+        sh:description  "This constraint validates the value range of the property." ;
+        sh:message      "The value violates the declared valueRange." ;
+        sh:name         "SimulationCase.timeStep-valueRange" ;
+        sh:order        16 ;
+        sh:path         emt:SimulationCase.timeStep ;
+        sh:severity     sh:Violation .
+
+emtc:SourceParameter
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:SourceParameter.SourceParameterList-cardinality ,
+                        emtc:SourceParameter.SourceParameterList-valueType ,
+                        emtc:SourceParameter.parameterName-cardinality ,
+                        emtc:SourceParameter.parameterName-datatype ,
+                        emtc:SourceParameter.parameterName-length ,
+                        emtc:SourceParameter.sequenceNumber-cardinality ,
+                        emtc:SourceParameter.sequenceNumber-datatype ,
+                        emtc:SourceParameter.sequenceNumber-valueRange ,
+                        emtc:SourceParameter.value-cardinality ,
+                        emtc:SourceParameter.value-datatype ;
+        sh:targetClass  emt:SourceParameter .
+
+emtc:SourceParameter.SourceParameterList-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "SourceParameter.SourceParameterList-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:SourceParameter.SourceParameterList ;
+        sh:severity     sh:Violation .
+
+emtc:SourceParameter.SourceParameterList-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:in           ( emt:SourceParameterList ) ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: emt:SourceParameterList" ;
+        sh:name         "SourceParameter.SourceParameterList-valueType" ;
+        sh:order        0 ;
+        sh:path         ( emt:SourceParameter.SourceParameterList rdf:type ) ;
+        sh:severity     sh:Violation .
+
+emtc:SourceParameter.parameterName-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "SourceParameter.parameterName-cardinality" ;
+        sh:order        1 ;
+        sh:path         emt:SourceParameter.parameterName ;
+        sh:severity     sh:Violation .
+
+emtc:SourceParameter.parameterName-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SourceParameter.parameterName-datatype" ;
+        sh:order        1 ;
+        sh:path         emt:SourceParameter.parameterName ;
+        sh:severity     sh:Violation .
+
+emtc:SourceParameter.parameterName-length
+        rdf:type        sh:PropertyShape ;
+        sh:minLength    1 ;
+        sh:description  "This constraint validates the length of the property value." ;
+        sh:message      "The value violates the declared length." ;
+        sh:name         "SourceParameter.parameterName-length" ;
+        sh:order        1 ;
+        sh:path         emt:SourceParameter.parameterName ;
+        sh:severity     sh:Violation .
+
+emtc:SourceParameter.sequenceNumber-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "SourceParameter.sequenceNumber-cardinality" ;
+        sh:order        2 ;
+        sh:path         emt:SourceParameter.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:SourceParameter.sequenceNumber-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:integer ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SourceParameter.sequenceNumber-datatype" ;
+        sh:order        2 ;
+        sh:path         emt:SourceParameter.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:SourceParameter.sequenceNumber-valueRange
+        rdf:type        sh:PropertyShape ;
+        sh:minInclusive 1 ;
+        sh:description  "This constraint validates the value range of the property." ;
+        sh:message      "The value violates the declared valueRange." ;
+        sh:name         "SourceParameter.sequenceNumber-valueRange" ;
+        sh:order        2 ;
+        sh:path         emt:SourceParameter.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:SourceParameter.value-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "SourceParameter.value-cardinality" ;
+        sh:order        3 ;
+        sh:path         emt:SourceParameter.value ;
+        sh:severity     sh:Violation .
+
+emtc:SourceParameter.value-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SourceParameter.value-datatype" ;
+        sh:order        3 ;
+        sh:path         emt:SourceParameter.value ;
+        sh:severity     sh:Violation .
+
+emtc:SourceParameterList
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:IdentifiedObject.description-cardinality ,
+                        emtc:IdentifiedObject.description-datatype ,
+                        emtc:IdentifiedObject.mRID-cardinality ,
+                        emtc:IdentifiedObject.mRID-datatype ,
+                        emtc:IdentifiedObject.name-cardinality ,
+                        emtc:IdentifiedObject.name-datatype ,
+                        emtc:SourceParameterList.IdentifiedObject-cardinality ,
+                        emtc:SourceParameterList.IdentifiedObject-valueType ,
+                        emtc:SourceParameterList.parameterSetName-cardinality ,
+                        emtc:SourceParameterList.parameterSetName-datatype ,
+                        emtc:SourceParameterList.scope-cardinality ,
+                        emtc:SourceParameterList.scope-datatype ,
+                        emtc:SourceParameterList.scope-length ,
+                        emtc:SourceParameterList.sequenceNumber-cardinality ,
+                        emtc:SourceParameterList.sequenceNumber-datatype ,
+                        emtc:SourceParameterList.sequenceNumber-valueRange ;
+        sh:targetClass  emt:SourceParameterList .
+
+emtc:SourceParameterList.IdentifiedObject-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "SourceParameterList.IdentifiedObject-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:SourceParameterList.IdentifiedObject ;
+        sh:severity     sh:Violation .
+
+emtc:SourceParameterList.IdentifiedObject-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "The value type shall be an IRI referencing an instance of the class: cim:IdentifiedObject" ;
+        sh:name         "SourceParameterList.IdentifiedObject-valueType" ;
+        sh:order        0 ;
+        sh:path         emt:SourceParameterList.IdentifiedObject ;
+        sh:severity     sh:Violation .
+
+emtc:SourceParameterList.parameterSetName-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "SourceParameterList.parameterSetName-cardinality" ;
+        sh:order        1 ;
+        sh:path         emt:SourceParameterList.parameterSetName ;
+        sh:severity     sh:Violation .
+
+emtc:SourceParameterList.parameterSetName-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SourceParameterList.parameterSetName-datatype" ;
+        sh:order        1 ;
+        sh:path         emt:SourceParameterList.parameterSetName ;
+        sh:severity     sh:Violation .
+
+emtc:SourceParameterList.scope-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "SourceParameterList.scope-cardinality" ;
+        sh:order        2 ;
+        sh:path         emt:SourceParameterList.scope ;
+        sh:severity     sh:Violation .
+
+emtc:SourceParameterList.scope-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SourceParameterList.scope-datatype" ;
+        sh:order        2 ;
+        sh:path         emt:SourceParameterList.scope ;
+        sh:severity     sh:Violation .
+
+emtc:SourceParameterList.scope-length
+        rdf:type        sh:PropertyShape ;
+        sh:minLength    1 ;
+        sh:description  "This constraint validates the length of the property value." ;
+        sh:message      "The value violates the declared length." ;
+        sh:name         "SourceParameterList.scope-length" ;
+        sh:order        2 ;
+        sh:path         emt:SourceParameterList.scope ;
+        sh:severity     sh:Violation .
+
+emtc:SourceParameterList.sequenceNumber-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "SourceParameterList.sequenceNumber-cardinality" ;
+        sh:order        3 ;
+        sh:path         emt:SourceParameterList.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:SourceParameterList.sequenceNumber-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:integer ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "SourceParameterList.sequenceNumber-datatype" ;
+        sh:order        3 ;
+        sh:path         emt:SourceParameterList.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:SourceParameterList.sequenceNumber-valueRange
+        rdf:type        sh:PropertyShape ;
+        sh:minInclusive 1 ;
+        sh:description  "This constraint validates the value range of the property." ;
+        sh:message      "The value violates the declared valueRange." ;
+        sh:name         "SourceParameterList.sequenceNumber-valueRange" ;
+        sh:order        3 ;
+        sh:path         emt:SourceParameterList.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:Substitution
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:IdentifiedObject.description-cardinality ,
+                        emtc:IdentifiedObject.description-datatype ,
+                        emtc:IdentifiedObject.mRID-cardinality ,
+                        emtc:IdentifiedObject.mRID-datatype ,
+                        emtc:IdentifiedObject.name-cardinality ,
+                        emtc:IdentifiedObject.name-datatype ,
+                        emtc:Substitution.ModelProject-cardinality ,
+                        emtc:Substitution.ModelProject-valueType ,
+                        emtc:Substitution.group-cardinality ,
+                        emtc:Substitution.group-datatype ,
+                        emtc:Substitution.sequenceNumber-cardinality ,
+                        emtc:Substitution.sequenceNumber-datatype ,
+                        emtc:Substitution.sequenceNumber-valueRange ,
+                        emtc:Substitution.value-cardinality ,
+                        emtc:Substitution.value-datatype ;
+        sh:targetClass  emt:Substitution .
+
+emtc:Substitution.ModelProject-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "Substitution.ModelProject-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:Substitution.ModelProject ;
+        sh:severity     sh:Violation .
+
+emtc:Substitution.ModelProject-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:in           ( emt:ModelProject ) ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: emt:ModelProject" ;
+        sh:name         "Substitution.ModelProject-valueType" ;
+        sh:order        0 ;
+        sh:path         ( emt:Substitution.ModelProject rdf:type ) ;
+        sh:severity     sh:Violation .
+
+emtc:Substitution.group-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 0..1" ;
+        sh:name         "Substitution.group-cardinality" ;
+        sh:order        1 ;
+        sh:path         emt:Substitution.group ;
+        sh:severity     sh:Violation .
+
+emtc:Substitution.group-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "Substitution.group-datatype" ;
+        sh:order        1 ;
+        sh:path         emt:Substitution.group ;
+        sh:severity     sh:Violation .
+
+emtc:Substitution.sequenceNumber-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "Substitution.sequenceNumber-cardinality" ;
+        sh:order        2 ;
+        sh:path         emt:Substitution.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:Substitution.sequenceNumber-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:integer ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "Substitution.sequenceNumber-datatype" ;
+        sh:order        2 ;
+        sh:path         emt:Substitution.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:Substitution.sequenceNumber-valueRange
+        rdf:type        sh:PropertyShape ;
+        sh:minInclusive 1 ;
+        sh:description  "This constraint validates the value range of the property." ;
+        sh:message      "The value violates the declared valueRange." ;
+        sh:name         "Substitution.sequenceNumber-valueRange" ;
+        sh:order        2 ;
+        sh:path         emt:Substitution.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:Substitution.value-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "Substitution.value-cardinality" ;
+        sh:order        3 ;
+        sh:path         emt:Substitution.value ;
+        sh:severity     sh:Violation .
+
+emtc:Substitution.value-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "Substitution.value-datatype" ;
+        sh:order        3 ;
+        sh:path         emt:Substitution.value ;
+        sh:severity     sh:Violation .
+
+emtc:ToolPayload
+        rdf:type        sh:NodeShape ;
+        sh:property     emtc:IdentifiedObject.description-cardinality ,
+                        emtc:IdentifiedObject.description-datatype ,
+                        emtc:IdentifiedObject.mRID-cardinality ,
+                        emtc:IdentifiedObject.mRID-datatype ,
+                        emtc:IdentifiedObject.name-cardinality ,
+                        emtc:IdentifiedObject.name-datatype ,
+                        emtc:ToolPayload.IdentifiedObject-cardinality ,
+                        emtc:ToolPayload.IdentifiedObject-valueType ,
+                        emtc:ToolPayload.content-cardinality ,
+                        emtc:ToolPayload.content-datatype ,
+                        emtc:ToolPayload.content-length ,
+                        emtc:ToolPayload.payloadKind-cardinality ,
+                        emtc:ToolPayload.payloadKind-datatype ,
+                        emtc:ToolPayload.payloadKind-length ,
+                        emtc:ToolPayload.sequenceNumber-cardinality ,
+                        emtc:ToolPayload.sequenceNumber-datatype ,
+                        emtc:ToolPayload.sequenceNumber-valueRange ;
+        sh:targetClass  emt:ToolPayload .
+
+emtc:ToolPayload.IdentifiedObject-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ToolPayload.IdentifiedObject-cardinality" ;
+        sh:order        0 ;
+        sh:path         emt:ToolPayload.IdentifiedObject ;
+        sh:severity     sh:Violation .
+
+emtc:ToolPayload.IdentifiedObject-valueType
+        rdf:type        sh:PropertyShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:description  "This constraint validates the value type of the association at the used direction." ;
+        sh:message      "The value type shall be an IRI referencing an instance of the class: cim:IdentifiedObject" ;
+        sh:name         "ToolPayload.IdentifiedObject-valueType" ;
+        sh:order        0 ;
+        sh:path         emt:ToolPayload.IdentifiedObject ;
+        sh:severity     sh:Violation .
+
+emtc:ToolPayload.content-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ToolPayload.content-cardinality" ;
+        sh:order        1 ;
+        sh:path         emt:ToolPayload.content ;
+        sh:severity     sh:Violation .
+
+emtc:ToolPayload.content-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ToolPayload.content-datatype" ;
+        sh:order        1 ;
+        sh:path         emt:ToolPayload.content ;
+        sh:severity     sh:Violation .
+
+emtc:ToolPayload.content-length
+        rdf:type        sh:PropertyShape ;
+        sh:minLength    1 ;
+        sh:description  "This constraint validates the length of the property value." ;
+        sh:message      "The value violates the declared length." ;
+        sh:name         "ToolPayload.content-length" ;
+        sh:order        1 ;
+        sh:path         emt:ToolPayload.content ;
+        sh:severity     sh:Violation .
+
+emtc:ToolPayload.payloadKind-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ToolPayload.payloadKind-cardinality" ;
+        sh:order        2 ;
+        sh:path         emt:ToolPayload.payloadKind ;
+        sh:severity     sh:Violation .
+
+emtc:ToolPayload.payloadKind-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ToolPayload.payloadKind-datatype" ;
+        sh:order        2 ;
+        sh:path         emt:ToolPayload.payloadKind ;
+        sh:severity     sh:Violation .
+
+emtc:ToolPayload.payloadKind-length
+        rdf:type        sh:PropertyShape ;
+        sh:minLength    1 ;
+        sh:description  "This constraint validates the length of the property value." ;
+        sh:message      "The value violates the declared length." ;
+        sh:name         "ToolPayload.payloadKind-length" ;
+        sh:order        2 ;
+        sh:path         emt:ToolPayload.payloadKind ;
+        sh:severity     sh:Violation .
+
+emtc:ToolPayload.sequenceNumber-cardinality
+        rdf:type        sh:PropertyShape ;
+        sh:maxCount     1 ;
+        sh:minCount     1 ;
+        sh:description  "This constraint validates the cardinality of the property." ;
+        sh:message      "Cardinality violation. Bounds are 1..1" ;
+        sh:name         "ToolPayload.sequenceNumber-cardinality" ;
+        sh:order        3 ;
+        sh:path         emt:ToolPayload.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:ToolPayload.sequenceNumber-datatype
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:integer ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "This constraint validates the datatype of the property (attribute)." ;
+        sh:message      "The datatype is not literal or it violates the xsd datatype." ;
+        sh:name         "ToolPayload.sequenceNumber-datatype" ;
+        sh:order        3 ;
+        sh:path         emt:ToolPayload.sequenceNumber ;
+        sh:severity     sh:Violation .
+
+emtc:ToolPayload.sequenceNumber-valueRange
+        rdf:type        sh:PropertyShape ;
+        sh:minInclusive 1 ;
+        sh:description  "This constraint validates the value range of the property." ;
+        sh:message      "The value violates the declared valueRange." ;
+        sh:name         "ToolPayload.sequenceNumber-valueRange" ;
+        sh:order        3 ;
+        sh:path         emt:ToolPayload.sequenceNumber ;
+        sh:severity     sh:Violation .
